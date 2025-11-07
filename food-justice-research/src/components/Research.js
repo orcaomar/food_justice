@@ -8,6 +8,7 @@ import omarImg from '../assets/research/mrPmoma8Y0m7QjiDXyKdr7Imc.jpg';
 import safeeraImg from '../assets/research/8O5XGyZcf1zQnohczPYDF1ceMA.png';
 
 const Research = () => {
+  console.log('Research component is rendering');
   return (
     <div className="research-container">
       <header className="research-header" style={{ backgroundImage: `url(${headerBg})` }}>

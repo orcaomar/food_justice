@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import Research from './components/Research';
 
 function App() {
+  console.log('App component is rendering');
   return (
     <Router>
       <div className="App">
