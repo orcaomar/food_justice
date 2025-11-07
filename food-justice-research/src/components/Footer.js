@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import './Footer.css';
 
@@ -28,11 +29,11 @@ const Footer = () => {
           <div className="footer-column">
             <h3>Pages</h3>
             <ul>
-              <li><a href="https://foodjusticeresearch.ca/">Home</a></li>
-              <li><a href="https://foodjusticeresearch.ca/research">Research</a></li>
-              <li><a href="https://foodjusticeresearch.ca/challenges">Challenges</a></li>
-              <li><a href="https://foodjusticeresearch.ca/community-ideas">Community Ideas</a></li>
-              <li><a href="https://foodjusticeresearch.ca/get-involved">Get Involved</a></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/research">Research</Link></li>
+              <li><Link to="/challenges">Challenges</Link></li>
+              <li><Link to="/community-ideas">Community Ideas</Link></li>
+              <li><Link to="/get-involved">Get Involved</Link></li>
               <li><a href="https://drive.google.com/file/d/16kI8PQwdcJub4PZi6A5drXkgXQl25Hir/view?usp=sharing" target="_blank" rel="noopener noreferrer">Research Report</a></li>
               <li><a href="https://drive.google.com/file/d/164Xmyw9_4-CXNy9bDpjNHcbw3LB5l2JM/view?usp=sharing" target="_blank" rel="noopener noreferrer">Executive Summary</a></li>
             </ul>
