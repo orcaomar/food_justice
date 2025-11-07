@@ -12,9 +12,9 @@ const Header = () => {
       <nav>
         <ul>
           <li><Link to="/research">Research</Link></li>
-          <li><a href="https://foodjusticeresearch.ca/challenges">Challenges</a></li>
-          <li><a href="https://foodjusticeresearch.ca/community-ideas">Ideas</a></li>
-          <li><a href="https://foodjusticeresearch.ca/get-involved">Get Involved</a></li>
+          <li><Link to="/challenges">Challenges</Link></li>
+          <li><Link to="/community-ideas">Community Ideas</Link></li>
+          <li><Link to="/get-involved">Get Involved</Link></li>
         </ul>
       </nav>
     </header>
