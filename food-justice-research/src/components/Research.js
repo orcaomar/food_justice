@@ -6,6 +6,7 @@ import actionPlanImg from '../assets/research/ZmnNohA0Ep8HWcizFZaeBOYFHg.jpg';
 import luannImg from '../assets/research/iEPxox514vmq2re5m1VYua1nYY.jpeg';
 import omarImg from '../assets/research/mrPmoma8Y0m7QjiDXyKdr7Imc.jpg';
 import safeeraImg from '../assets/research/8O5XGyZcf1zQnohczPYDF1ceMA.png';
+import Accordion from './Accordion';
 
 const Research = () => {
   console.log('Research component is rendering');
@@ -76,6 +77,56 @@ const Research = () => {
             <li>Residents experiencing food insecurity.</li>
           </ol>
         </div>
+      </section>
+
+      <section className="research-methods">
+        <h2>Research Methods</h2>
+        <Accordion
+          title="Literature Review and Assessment"
+          content="The team researched food justice in various online sources, focusing on articles from 2019-2022 mainly about Canada. We found many articles, but only some were relevant to our topic. A student produced a literature review (add link to literature review when we have it)."
+        />
+        <Accordion
+          title="Previous Community Research"
+          content="Flemingdon & Thorncliffe Food Security Network: Closing the Food Access Gaps in the Flemingdon Park & Thorncliffe Park Neighbourhoods of Toronto, Canada, September 4th, 2015. Results: based on data, identified 4 causes of food insecurity locally: 'high cost of foods, the availability of foods or lack thereof, the poor quality of foods available, and insufficient education about foods.' Recommendations from research participants included: a food map ('all food-related information in one place'); food education (cooking, health, food handling, gardening); food hubs where there's education and affordable foods and employment opportunities; community gardens/balcony gardens; food trucks; food markets (affordable food at a farmers market like atmosphere); food share good food box; door-to-door delivery 2019 Flemingdon Health Centre and Oriole Food Bank Survey. We were told about this survey but unfortunately the results cannot be found 2021 Survey of Food Bank Participants. During Covid An earlier version of this survey was administered by paper anonymously in Flemingdon Park however the results were not widely shared"
+        />
+        <Accordion
+          title="Environmental Scan"
+          content="The community has a group called the Flemingdon Thorncliffe Food Security Network (FTFSN). When the pandemic started, this group worried about more people not having enough food, which led to this study. We talked to almost all the local groups working on food insecurity (please see the Community Resources page), and they gave us advice and many joined our focus groups."
+        />
+        <Accordion
+          title="Qualitative Data Generation"
+          content={
+            <>
+              <p>Qualitative data was generated through the following:</p>
+              <ol>
+                <li>Participant Observations
+                  <p>Observation research at two food banks: TNO Food Collaborative, and Angela James Food Distribution Centre. Community Researchers took detailed field notes, which informed the focus group questions and was analyzed with the focus group qualitative data.</p>
+                </li>
+                <li>Research Focus Groups
+                  <p>The team conducted five focus group discussions with the following:</p>
+                </li>
+                <li>Two worker groups and three resident groups</li>
+              </ol>
+              <p>23 participants in total: 11 workers, 12 residents</p>
+              <p>[Note]: Focus group discussions were audio-recorded and transcribed for data analysis.</p>
+            </>
+          }
+        />
+        <Accordion
+          title="Limitations in Research"
+          content={
+            <>
+              <p>As this is qualitative research, we were looking for depth rather than breadth. Specifically, we aimed to deepen our understanding of the experiences and issues related to food insecurity, rather than provide a comprehensive count of the incidence of food insecurity in the community. Our small sample of research participants is purposive workers and residents, rather than representative.</p>
+              <p>Because of limited time and budget, we were not able to include the full range of worker or resident perspectives and experiences in our focus group discussions. Specifically, for example, we note that our small sample did not include:</p>
+              <ol>
+                <li>Seniors</li>
+                <li>Youth</li>
+                <li>School nutrition program workers</li>
+                <li>Refugee newcomer communities (e.g. privately sponsored and government-assisted refugees, those arriving with Permanent Residency status as well as refugee claimants)</li>
+              </ol>
+            </>
+          }
+        />
       </section>
 
       <section className="team-members">
