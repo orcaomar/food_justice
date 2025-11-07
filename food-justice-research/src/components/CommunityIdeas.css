@@ -1,0 +1,17 @@
+.community-ideas {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f8f9fa;
+}
+
+.community-ideas h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.ideas-cards {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  gap: 2rem;
+}
