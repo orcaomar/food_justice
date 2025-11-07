@@ -4,20 +4,33 @@ import './CommunityIdeas.css';
 const CommunityIdeas = () => {
   return (
     <section className="community-ideas">
-      <h2>Community Ideas</h2>
-      <p>Our research is grounded in the knowledge and expertise of community members. We are committed to sharing our research findings with the communities we work with and to supporting their efforts to build a more just and equitable food system.</p>
-      <div className="ideas-cards">
-        <div className="card">
-          <h3>Community Food Hubs</h3>
-          <p>Community food hubs can provide a space for community members to access healthy, affordable, and culturally appropriate food. They can also provide a space for community members to come together to share food, knowledge, and skills.</p>
+      <div className="ideas-content">
+        <div className="ideas-text">
+          <h2>Community Ideas</h2>
+          <p>Residents and workers bring a wealth of skills, knowledge, experience and ideas to make meaningful change. Ideas about jobs, rent, alternatives to food banks, addressing power imbalances, and more.</p>
+          <a href="https://foodjusticeresearch.ca/community-ideas" className="learn-more-button">Learn more</a>
         </div>
-        <div className="card">
-          <h3>Community Gardens</h3>
-          <p>Community gardens can provide a space for community members to grow their own food. They can also provide a space for community members to come together to share food, knowledge, and skills.</p>
+        <div className="ideas-image">
+          <img src="https://framerusercontent.com/images/ZhtHHWs7yysQOKzrO7Hv6NRLEM.jpg" alt="Community Ideas" />
         </div>
-        <div className="card">
-          <h3>Food Policy Councils</h3>
-          <p>Food policy councils can provide a space for community members to come together to advocate for policies that support a more just and equitable food system.</p>
+      </div>
+      <div className="stories-carousel">
+        <h2>Explore Stories</h2>
+        <div className="carousel-container">
+          <div className="carousel-track">
+            <a href="https://foodjusticeresearch.ca/community-ideas#relationship-building" className="carousel-slide">
+              <img src="https://framerusercontent.com/images/TdmyTfbpIpNpsRrBEgIf4V9yP8.png" alt="Relationship Building" />
+            </a>
+            <a href="https://foodjusticeresearch.ca/community-ideas#advocacy" className="carousel-slide">
+              <img src="https://framerusercontent.com/images/6vP42Sc062MlqLG8Jxib1kxo.jpg" alt="Advocacy" />
+            </a>
+            <a href="https://foodjusticeresearch.ca/community-ideas#alternatives" className="carousel-slide">
+              <img src="https://framerusercontent.com/images/aGej5ERlKImaCh68lG8gZUOocOQ.png" alt="Alternatives" />
+            </a>
+            <a href="https://foodjusticeresearch.ca/challenges-stigmatization#shame" className="carousel-slide">
+              <img src="https://framerusercontent.com/images/o0EBedslZ6R9dPX4PJ5THCzpY.jpg" alt="Shame" />
+            </a>
+          </div>
         </div>
       </div>
     </section>

@@ -4,10 +4,10 @@ import './Hero.css';
 const Hero = () => {
   return (
     <div className="hero">
-      <img src="https://framerusercontent.com/images/1364531/1678735626.jpg" alt="Food Justice Research" />
+      <video src="https://framerusercontent.com/assets/RsBoFqSaDSL4WwhPHMXwsYGfzw.mp4" loop muted playsInline autoPlay />
       <div className="hero-text">
-        <h1>Food Justice Research</h1>
-        <p>A hub for community-led research on food justice and food sovereignty in what is colonially known as 'British Columbia'</p>
+        <h1>Flemingdon & Thorncliffe Food Justice</h1>
+        <a href="https://youtu.be/h1124yB9sc0?si=Zu4JN6y5PCmsJX5g" className="video-button">See Video</a>
       </div>
     </div>
   );
