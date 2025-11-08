@@ -8,6 +8,7 @@ import CommunityIdeas from './components/CommunityIdeas';
 import ResearchPartners from './components/ResearchPartners';
 import Footer from './components/Footer';
 import Research from './components/Research';
+import GetInvolved from './pages/GetInvolved';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         } />
         <Route path="/research" element={<Research />} />
         <Route path="/community-ideas" element={<CommunityIdeas />} />
+        <Route path="/get-involved" element={<GetInvolved />} />
       </Routes>
       <Footer />
     </div>

@@ -1,0 +1,95 @@
+.get-involved .masthead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+}
+
+.get-involved .masthead h1 {
+  font-size: 77px;
+  font-family: "Urbanist", sans-serif;
+  font-weight: 600;
+  color: #faf8ea;
+}
+
+.get-involved .masthead p {
+  font-size: 22px;
+  font-family: "Urbanist", sans-serif;
+  font-weight: 700;
+  color: #faf8ea;
+  max-width: 500px;
+}
+
+.get-involved .banner {
+  background: linear-gradient(180deg, #b5c99a 0%, #faf8ea 100%);
+  padding: 45px 40px;
+  text-align: center;
+}
+
+.get-involved .banner p {
+  font-family: "Inter Tight", "Inter Tight Placeholder", sans-serif;
+  font-size: 18px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.get-involved .interactive-map {
+  background-color: #faf8ea;
+  padding: 0 40px 100px;
+  text-align: center;
+}
+
+.get-involved .interactive-map h2 {
+  font-size: 50px;
+  font-weight: 600;
+  letter-spacing: -2.6px;
+  color: #333;
+  margin-bottom: 60px;
+}
+
+.get-involved .interactive-map iframe {
+  border: none;
+}
+
+.get-involved .interactive-map button {
+  background-color: #862b0d;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  padding: 16px 32px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
+.get-involved .faq {
+  padding: 100px 40px;
+  background-color: #faf8ea;
+}
+
+.get-involved .faq h2 {
+  font-size: 50px;
+  font-weight: 600;
+  letter-spacing: -2.6px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.get-involved .faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+}
+
+.get-involved .faq-item h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #666;
+}
