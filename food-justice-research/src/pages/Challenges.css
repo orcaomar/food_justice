@@ -1,0 +1,97 @@
+.challenges-page {
+  background-color: #faf8ea;
+}
+
+.masthead {
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.masthead-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.masthead-overlay {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+}
+
+.masthead h1 {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 77px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.masthead p {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 18px;
+  color: #fff;
+}
+
+.challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  padding: 100px 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.challenge-card {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+}
+
+.challenge-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.challenge-content {
+  padding: 30px;
+}
+
+.challenge-content h3 {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.learn-more-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  border-radius: 24px;
+  color: #000;
+  text-decoration: none;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.learn-more-button:hover {
+  background-color: #000;
+  color: #fff;
+}
