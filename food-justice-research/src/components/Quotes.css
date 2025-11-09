@@ -1,0 +1,22 @@
+.quotes-container {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.quote {
+  margin-bottom: 2rem;
+}
+
+.quote p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.quote-author {
+  font-style: italic;
+  text-align: right;
+  color: #555;
+}

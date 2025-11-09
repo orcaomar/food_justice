@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import Quotes from './components/Quotes';
 import OurResearch from './components/OurResearch';
 import Challenges from './components/Challenges';
 import CommunityIdeas from './components/CommunityIdeas';
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={
           <>
             <Hero />
+            <Quotes />
             <OurResearch />
             <Challenges />
             <ResearchPartners />
