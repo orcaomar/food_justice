@@ -1,29 +1,4 @@
-.get-involved .masthead {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 500px;
-  background-size: cover;
-  background-position: center;
-  color: white;
-  text-align: center;
-}
-
-.get-involved .masthead h1 {
-  font-size: 77px;
-  font-family: "Urbanist", sans-serif;
-  font-weight: 600;
-  color: #faf8ea;
-}
-
-.get-involved .masthead p {
-  font-size: 22px;
-  font-family: "Urbanist", sans-serif;
-  font-weight: 700;
-  color: #faf8ea;
-  max-width: 500px;
-}
+@import '../components/Masthead.css';
 
 .get-involved .banner {
   background: linear-gradient(180deg, #b5c99a 0%, #faf8ea 100%);
