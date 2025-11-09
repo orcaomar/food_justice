@@ -23,7 +23,9 @@ const Footer = () => {
     <footer>
       <div className="footer-content">
         <div className="footer-left">
-          <Logo />
+          <Link to="/">
+            <Logo />
+          </Link>
         </div>
         <div className="footer-right">
           <div className="footer-column">
