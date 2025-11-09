@@ -16,7 +16,7 @@ const Overlay = ({ isOpen, onClose, title, audioSrc, transcript }) => {
         <audio controls src={audioSrc}>
           Your browser does not support the audio element.
         </audio>
-        <p>{transcript}</p>
+        <p style={{ whiteSpace: 'pre-wrap' }}>{transcript}</p>
       </div>
     </div>
   );
