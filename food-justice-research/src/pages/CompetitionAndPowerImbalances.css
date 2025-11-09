@@ -1,0 +1,54 @@
+.competition-and-power-imbalances {
+  padding: 2rem;
+}
+
+.main-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+}
+
+.summary {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.section {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.section.image-right {
+  flex-direction: row-reverse;
+}
+
+.image-container {
+  flex: 1;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.text-container {
+  flex: 1;
+}
+
+.hear-story-button {
+  background-color: #862b0d;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
