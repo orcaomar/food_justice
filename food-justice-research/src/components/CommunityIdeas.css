@@ -98,3 +98,15 @@
     transform: translateX(-100%);
   }
 }
+
+.idea-card {
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  height: 100%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.idea-card:hover {
+  transform: scale(1.05);
+}
