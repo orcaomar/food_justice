@@ -19,20 +19,10 @@ const CommunityIdeas = () => {
 
   return (
     <div style={{ backgroundColor: '#faf8ea' }}>
-      <div style={{
-        position: 'relative',
-        height: '500px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundImage: `url(${headerBackground})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        color: 'white'
-      }}>
+      <div className="masthead" style={{ backgroundImage: `url(${headerBackground})` }}>
         <div style={{ textAlign: 'center' }}>
-          <h1 style={{ fontSize: '77px', fontFamily: 'Urbanist, sans-serif' }}>{communityIdeas.header.title}</h1>
-          <p style={{ fontSize: '22px', fontFamily: 'Urbanist, sans-serif' }}>{communityIdeas.header.subtitle}</p>
+          <h1>{communityIdeas.header.title}</h1>
+          <p>{communityIdeas.header.subtitle}</p>
         </div>
       </div>
       <div style={{ padding: '45px 40px', backgroundColor: '#b5c99a' }}>
