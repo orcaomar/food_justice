@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './CommunityIdeas.css';
 import '../index.css';
 import headerBackground from '../assets/community-ideas/lNM99SIW9C84CO5V14Lr7nmp1s.jpg';
 import ideaImage from '../assets/community-ideas/Sd001QxeO4hwIqVmW0kIJSxl5cU.jpg';
@@ -47,7 +48,7 @@ const CommunityIdeas = () => {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'center' }}>
               {section.cards.map((card, cardIndex) => (
                 <div key={cardIndex} style={{ flex: '1 0 300px', maxWidth: '320px', cursor: 'pointer' }} onClick={() => openOverlay(card)}>
-                  <div style={{ backgroundColor: 'white', borderRadius: '20px', padding: '30px', height: '100%' }}>
+                  <div className="idea-card">
                     <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
                       <img src={ideaImage} alt="" style={{ width: '60px', height: '60px', borderRadius: '50%' }} />
                       <div style={{ flex: '1 0 0px' }}>
