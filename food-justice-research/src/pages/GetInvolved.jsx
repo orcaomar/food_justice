@@ -1,8 +1,10 @@
 import React from "react";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 import { getInvolvedData } from "../data/GetInvolvedData";
 import "./GetInvolved.css";
 
 const GetInvolved = () => {
+  useDocumentTitle('Get Involved | Flemingdon & Thorncliffe Food Justice | Toronto, Canada');
   return (
     <div className="get-involved">
       <section className="masthead" style={{ backgroundImage: `url(${getInvolvedData.masthead.backgroundImage})` }}>

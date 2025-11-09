@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 import './CommunityIdeas.css';
 import '../index.css';
 import headerBackground from '../assets/community-ideas/lNM99SIW9C84CO5V14Lr7nmp1s.jpg';
@@ -7,6 +8,7 @@ import { communityIdeas } from './CommunityIdeasData';
 import Overlay from './Overlay';
 
 const CommunityIdeas = () => {
+  useDocumentTitle('Community Ideas | Flemingdon & Thorncliffe Food Justice | Toronto, Canada');
   const [selectedCard, setSelectedCard] = useState(null);
 
   const openOverlay = (card) => {
