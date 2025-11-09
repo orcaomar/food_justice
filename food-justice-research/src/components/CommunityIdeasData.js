@@ -27,10 +27,7 @@ import communityLedSolutionsAudio from '../assets/audio/Maha-resident (2).mp3';
 export const communityIdeas = {
   header: {
     title: 'Community Ideas',
-    subtitle: 'A collection of local residents’ ideas for creating a just and sustainable food system in their communities',
-  },
-  intro: {
-    text: 'The following ideas were generated during community conversations about how to create a just and sustainable food system in Flemingdon Park and Thorncliffe Park. These ideas are supported by data from a neighbourhood survey of over 400 local residents.',
+    subtitle: 'Residents and workers bring a wealth of skills, knowledge, experience and ideas to make meaningful change.',
   },
   sections: [
     {

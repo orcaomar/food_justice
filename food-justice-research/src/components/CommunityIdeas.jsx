@@ -25,11 +25,6 @@ const CommunityIdeas = () => {
           <p>{communityIdeas.header.subtitle}</p>
         </div>
       </div>
-      <div style={{ padding: '45px 40px', backgroundColor: '#b5c99a' }}>
-        <p style={{ textAlign: 'center', fontSize: '18px', fontFamily: 'Inter Tight, sans-serif' }}>
-          {communityIdeas.intro.text}
-        </p>
-      </div>
       <div style={{ padding: '0 40px 100px' }}>
         {communityIdeas.sections.map((section, index) => (
           <div key={index} style={{ marginBottom: '60px' }}>
