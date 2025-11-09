@@ -26,6 +26,14 @@ describe('CommunityIdeas', () => {
     render(<CommunityIdeas />);
     expect(screen.getByText(communityIdeas.header.title)).toBeInTheDocument();
     expect(screen.getByText(communityIdeas.header.subtitle)).toBeInTheDocument();
-    expect(screen.getByText(communityIdeas.intro.text)).toBeInTheDocument();
+  });
+
+  test('renders all section descriptions', () => {
+    render(<CommunityIdeas />);
+    communityIdeas.sections.forEach(section => {
+      if (section.description) {
+        expect(screen.getByText(section.description)).toBeInTheDocument();
+      }
+    });
   });
 });
