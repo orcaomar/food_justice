@@ -27,13 +27,13 @@ const Challenges = () => {
       <div className="challenges-grid">
         {challenges.map((challenge, index) => (
           <div className="challenge-card" key={index}>
+            <h3>{challenge.title}</h3>
             <img
               src={challenge.imageUrl}
               alt={challenge.title}
               className="challenge-image"
             />
             <div className="challenge-content">
-              <h3>{challenge.title}</h3>
               <Link to={challenge.link} className="learn-more-button">
                 Learn more
               </Link>
