@@ -9,7 +9,6 @@ import safeeraImg from '../assets/research/8O5XGyZcf1zQnohczPYDF1ceMA.png';
 import Accordion from './Accordion';
 
 const Research = () => {
-  console.log('Research component is rendering');
   return (
     <div className="research-container">
       <header className="research-header" style={{ backgroundImage: `url(${headerBg})` }}>
@@ -148,6 +147,9 @@ const Research = () => {
             <p>Community Researcher, resident and co-founder, Friends of Thorncliffe Park</p>
           </div>
         </div>
+        <p className="past-team-members">
+          Past team members who have made significant contributions to this work include: Darcy MacCallum, Khadija Farooq, Adeena Ali, Shabnam Sheikh, Kashfia Rahman, and Shehnoor Khurram. We are grateful to the members of the community who generously shared their experience, insight, and ideas with us.
+        </p>
       </section>
 
       <section className="research-report">

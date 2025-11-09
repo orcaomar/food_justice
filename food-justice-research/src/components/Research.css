@@ -54,13 +54,22 @@
   gap: 2rem;
 }
 
+.research-container h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
 .team-member-card {
   text-align: center;
+  background-color: #e8f5e9;
+  padding: 1.5rem;
+  border-radius: 8px;
 }
 
 .team-member-card img {
   width: 100%;
-  height: auto;
+  height: 250px;
+  object-fit: cover;
   border-radius: 8px;
   margin-bottom: 1rem;
 }
