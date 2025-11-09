@@ -6,12 +6,14 @@ import headerBackground from '../assets/community-ideas/lNM99SIW9C84CO5V14Lr7nmp
 import ideaImage from '../assets/community-ideas/Sd001QxeO4hwIqVmW0kIJSxl5cU.jpg';
 import { communityIdeas } from './CommunityIdeasData';
 import Overlay from './Overlay';
+import { trackEvent } from '../utils/google-analytics';
 
 const CommunityIdeas = () => {
   useDocumentTitle('Community Ideas | Flemingdon & Thorncliffe Food Justice | Toronto, Canada');
   const [selectedCard, setSelectedCard] = useState(null);
 
   const openOverlay = (card) => {
+    trackEvent('Community Ideas', 'Card Click', card.title);
     setSelectedCard(card);
   };
 

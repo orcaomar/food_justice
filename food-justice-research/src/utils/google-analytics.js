@@ -13,3 +13,13 @@ export const trackPageView = (path) => {
         ReactGA.send({ hitType: "pageview", page: path });
     }
 };
+
+export const trackEvent = (category, action, label) => {
+    if (process.env.NODE_ENV === 'production') {
+        ReactGA.event({
+            category: category,
+            action: action,
+            label: label,
+        });
+    }
+};
