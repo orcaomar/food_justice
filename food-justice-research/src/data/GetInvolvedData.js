@@ -1,3 +1,6 @@
+// TODO: Replace with local image when available
+// import backgroundImage from '../assets/challenges/sub_pages/GBXvrS20PXQxposzZLFQQ3FES9U.jpg';
+
 export const getInvolvedData = {
   masthead: {
     title: "Get Involved",

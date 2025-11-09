@@ -1,0 +1,5 @@
+The following remote images were not found in the local assets directory:
+
+File: food-justice-research/src/data/GetInvolvedData.js
+URL: https://framerusercontent.com/images/GBXvrS20PXQxposzZLFQQ3FES9U.jpg
+Notes: This image is used as a background image in the masthead of the "Get Involved" page. A local version of this image needs to be added to the `food-justice-research/src/assets/challenges/sub_pages` directory. The code in `GetInvolvedData.js` has been updated to include a commented-out import statement that can be used once the image is available.

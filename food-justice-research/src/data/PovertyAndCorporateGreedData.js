@@ -1,17 +1,28 @@
+import povertyAndCorporateGreedImage from '../assets/challenges/sub_pages/HU1zoKMF1yyRRDoLcgimLkzn88.jpg';
+import areFoodProgramsHelpingImage from '../assets/challenges/sub_pages/8yfFlMaoRVgxr9ke1c2E6OG476s.jpg';
+import localHousingImage from '../assets/challenges/sub_pages/Iglof7X0XJDZRZcwgSQOVH41Ro.jpg';
+import increasingDeepeningFoodInsecurityImage from '../assets/challenges/sub_pages/grx5WPQXF83mssd35daufnpmbA.jpg';
+import unaffordabilityImage from '../assets/challenges/sub_pages/cV4W8BowN8UqD6sZS7XPqmCrj8.jpg';
+import labourMarketExclusionExploitationImage from '../assets/challenges/sub_pages/eR1qJVz40AaT7V3YCrMA26P0cpo.jpg';
+import stigmatizationShameAndIndignityImage from '../assets/challenges/sub_pages/TPaxET9KbXqsDgAfGonreR2Le0.jpg';
+import emergencyFoodCharityImage from '../assets/challenges/sub_pages/KYrKdcBYQH3W8uXXhi1V3WfZss.jpg';
+import povertyAndCorporateGreedCarouselImage from '../assets/challenges/sub_pages/e8J8E5eYvhfEhxMBcSZMKbynYE.jpg';
+import competitionPowerImbalanceImage from '../assets/challenges/sub_pages/77HphpE6HipyJjg1etIr16KaC0.jpg';
+
 const PovertyAndCorporateGreedData = {
     title: "Poverty & Corporate Greed",
-    image: "https://framerusercontent.com/images/HU1zoKMF1yyRRDoLcgimLkzn88.jpg",
+    image: povertyAndCorporateGreedImage,
     subTitle: "What are the structures, practices, procedures, institutions, and players that produce and sustain food insecurity? Follow the money.",
     sections: [
         {
             title: "Are Food Programs Helping?",
-            image: "https://framerusercontent.com/images/8yfFlMaoRVgxr9ke1c2E6OG476s.jpg",
+            image: areFoodProgramsHelpingImage,
             text: "There is money for food banks – a response to food insecurity that we know is not effective in the long term. It is difficult to access public or private funding for interventions geared toward longer-term solutions or prevention of food insecurity.",
             audio: "path/to/audio.mp3"
         },
         {
             title: "Local Housing: Out of Control Rents, Big Corporate Profits",
-            image: "https://framerusercontent.com/images/Iglof7X0XJDZRZcwgSQOVH41Ro.jpg",
+            image: localHousingImage,
             text: `"The policymakers, the local government, they need to really look at this, and I think they do, but they just don't do anything."`,
             audio: "path/to/audio.mp3"
         },
@@ -35,37 +46,37 @@ const PovertyAndCorporateGreedData = {
     carousel: [
         {
             title: "Increasing, Deepening Food Insecurity",
-            image: "https://framerusercontent.com/images/grx5WPQXF83mssd35daufnpmbA.jpg",
+            image: increasingDeepeningFoodInsecurityImage,
             link: "/challenges/increasing-deepening-food-insecurity"
         },
         {
             title: "Unaffordability",
-            image: "https://framerusercontent.com/images/cV4W8BowN8UqD6sZS7XPqmCrj8.jpg",
+            image: unaffordabilityImage,
             link: "/challenges/unaffordability"
         },
         {
             title: "Labour Market Exclusion, Exploitation",
-            image: "https://framerusercontent.com/images/eR1qJVz40AaT7V3YCrMA26P0cpo.jpg",
+            image: labourMarketExclusionExploitationImage,
             link: "/challenges/labour-market-exploitation"
         },
         {
             title: "Stigmatization, Shame and Indignity",
-            image: "https://framerusercontent.com/images/TPaxET9KbXqsDgAfGonreR2Le0.jpg",
+            image: stigmatizationShameAndIndignityImage,
             link: "/challenges/stigmatization"
         },
         {
             title: "Emergency Food Charity",
-            image: "https://framerusercontent.com/images/KYrKdcBYQH3W8uXXhi1V3WfZss.jpg",
+            image: emergencyFoodCharityImage,
             link: "/challenges/emergency-food-charity"
         },
         {
             title: "Poverty and Corporate Greed",
-            image: "https://framerusercontent.com/images/e8J8E5eYvhfEhxMBcSZMKbynYE.jpg",
+            image: povertyAndCorporateGreedCarouselImage,
             link: "/challenges/poverty-corporate-greed"
         },
         {
             title: "Built-in Competition and Power Imbalances",
-            image: "https://framerusercontent.com/images/77HphpE6HipyJjg1etIr16KaC0.jpg",
+            image: competitionPowerImbalanceImage,
             link: "/challenges/competition-power-imbalance"
         }
     ]
