@@ -1,11 +1,11 @@
 // TODO: Replace with local image when available
-// import backgroundImage from '../assets/challenges/sub_pages/GBXvrS20PXQxposzZLFQQ3FES9U.jpg';
+import backgroundImage from '../assets/get-involved/GBXvrS20PXQxposzZLFQQ3FES9U.jpg';
 
 export const getInvolvedData = {
   masthead: {
     title: "Get Involved",
     subtitle: "Find ways to get involved in Flemingdon Park and Thorncliffe Park.",
-    backgroundImage: "https://framerusercontent.com/images/GBXvrS20PXQxposzZLFQQ3FES9U.jpg",
+    backgroundImage: backgroundImage,
   },
   banner: {
     text: "While the residents of Thorncliffe Park and Flemingdon Park face disadvantage and marginalization, there is a wealth of resources, knowledge and skills in the community. We take seriously the extensive and creative list of ideas for change, and suggest that this is a good starting point for the next phase of the work. You can learn about existing programs by exploring the map below. Many are always looking for volunteers",
