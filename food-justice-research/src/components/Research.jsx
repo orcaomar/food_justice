@@ -1,4 +1,5 @@
 import React from 'react';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 import './Research.css';
 import headerBg from '../assets/research/DQaUHWzldUNQUDV8Bk1igtA3s.jpg';
 import projectGoalsImg from '../assets/research/cjRR1Ssh7HNarcSqiHBa4XK6Us.jpg';
@@ -9,6 +10,7 @@ import safeeraImg from '../assets/research/8O5XGyZcf1zQnohczPYDF1ceMA.png';
 import Accordion from './Accordion';
 
 const Research = () => {
+  useDocumentTitle('Research | Flemingdon & Thorncliffe Food Justice | Toronto, Canada');
   return (
     <div className="research-container">
       <header className="research-header" style={{ backgroundImage: `url(${headerBg})` }}>
