@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import Analytics from './components/Analytics';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Quotes from './components/Quotes';
@@ -14,6 +15,7 @@ import GetInvolved from './pages/GetInvolved';
 function App() {
   return (
     <div className="App">
+      <Analytics />
       <Header />
       <Routes>
         <Route path="/" element={
