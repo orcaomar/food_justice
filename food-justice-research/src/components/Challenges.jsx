@@ -23,7 +23,7 @@ const Challenges = () => {
             <div className="slide" key={index}>
               <div className="challenge-card">
                 <h3>{challenge.title}</h3>
-                <img src={challenge.imageUrl} alt={challenge.title} />
+                <img src={challenge.imageUrl} alt={challenge.title} className="challenge-image" loading="lazy" decoding="async" />
                 <a href={challenge.link} className="learn-more-button">Learn more</a>
               </div>
             </div>
