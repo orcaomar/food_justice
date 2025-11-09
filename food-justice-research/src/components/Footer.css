@@ -47,6 +47,10 @@ footer {
   text-decoration: none;
 }
 
+.footer-column a:hover {
+  color: #862b0d;
+}
+
 .footer-column form {
   display: flex;
   flex-direction: column;
@@ -93,6 +97,10 @@ footer {
   font-size: 18px;
   color: #000;
   text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: #862b0d;
 }
 
 .back-to-top {

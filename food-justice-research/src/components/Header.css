@@ -29,6 +29,10 @@ nav a {
   font-weight: 500;
 }
 
+nav a:hover {
+  color: #862b0d;
+}
+
 @media (max-width: 768px) {
   header {
     flex-direction: column;
