@@ -10,37 +10,37 @@ const challenges = [
   {
     title: 'Increasing, Deepening Food Insecurity',
     imageUrl: severityImage,
-    link: '/challenges-developing-severity',
+    link: '/challenges/increasing-and-deepening-food-insecurity',
   },
   {
     title: 'Unaffordability',
     imageUrl: unaffordabilityImage,
-    link: '/challenges-unaffordability',
+    link: '/challenges/unaffordability',
   },
   {
     title: 'Labour Market Exclusion, Exploitation',
     imageUrl: exclusionImage,
-    link: '/challenges-labour-market-exploitation',
+    link: '/challenges/labour-market-exploitation',
   },
   {
     title: 'Stigmatization, Shame and Indignity',
     imageUrl: stigmatizationImage,
-    link: '/challenges-stigmatization',
+    link: '/challenges/stigmatization',
   },
   {
     title: 'Emergency Food Charity',
     imageUrl: emergencyImage,
-    link: '/challenges-emergency-food-charity',
+    link: '/challenges/emergency-food-charity',
   },
   {
     title: 'Poverty and Corporate Greed',
     imageUrl: povertyImage,
-    link: '/challenges-poverty-corporate-greed',
+    link: '/challenges/poverty-corporate-greed',
   },
   {
     title: 'Built-in Competition and Power Imbalances',
     imageUrl: powerImage,
-    link: '/challenges-competition-power-imbalance',
+    link: '/challenges/competition-power-imbalance',
   },
 ];
 
