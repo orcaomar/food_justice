@@ -1,12 +1,13 @@
 import React from 'react';
 import './OurResearch.css';
+import researchImg from '../assets/homepage/ffGXRcDfMvqRSS8GbduWhBgfzlQ.jpg';
 
 const OurResearch = () => {
   return (
     <section className="our-research">
       <div className="research-content">
         <div className="research-image">
-          <img src="https://framerusercontent.com/images/ffGXRcDfMvqRSS8GbduWhBgfzlQ.jpg" alt="Our Research" />
+          <img src={researchImg} alt="Our Research" />
         </div>
         <div className="research-text">
           <h2>Our Research</h2>

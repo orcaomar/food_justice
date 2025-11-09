@@ -1,40 +1,49 @@
 import React, { useState } from 'react';
 import './Challenges.css';
 
+import severityImage from '../assets/homepage/grx5WPQXF83mssd35daufnpmbA.jpg';
+import unaffordabilityImage from '../assets/homepage/cV4W8BowN8UqD6sZS7XPqmCrj8.jpg';
+import exclusionImage from '../assets/homepage/eR1qJVz40AaT7V3YCrMA26P0cpo.jpg';
+import stigmatizationImage from '../assets/homepage/TPaxET9KbXqsDgAfGonreR2Le0.jpg';
+import emergencyImage from '../assets/homepage/KYrKdcBYQH3W8uXXhi1V3WfZss.jpg';
+import povertyImage from '../assets/homepage/e8J8E5eYvhfEhxMBcSZMKbynYE.jpg';
+import powerImage from '../assets/homepage/77HphpE6HipyJjg1etIr16KaC0.jpg';
+
+
 const challenges = [
   {
     title: 'Increasing, Deepening Food Insecurity',
-    image: 'https://framerusercontent.com/images/grx5WPQXF83mssd35daufnpmbA.jpg',
+    image: severityImage,
     link: 'https://foodjusticeresearch.ca/challenges-developing-severity',
   },
   {
     title: 'Unaffordability',
-    image: 'https://framerusercontent.com/images/cV4W8BowN8UqD6sZS7XPqmCrj8.jpg',
+    image: unaffordabilityImage,
     link: 'https://foodjusticeresearch.ca/challenges-unaffordability',
   },
   {
     title: 'Labour Market Exclusion, Exploitation',
-    image: 'https://framerusercontent.com/images/eR1qJVz40AaT7V3YCrMA26P0cpo.jpg',
+    image: exclusionImage,
     link: 'https://foodjusticeresearch.ca/challenges-labour-market-exploitation',
   },
   {
     title: 'Stigmatization, Shame and Indignity',
-    image: 'https://framerusercontent.com/images/TPaxET9KbXqsDgAfGonreR2Le0.jpg',
+    image: stigmatizationImage,
     link: 'https://foodjusticeresearch.ca/challenges-stigmatization',
   },
   {
     title: 'Emergency Food Charity',
-    image: 'https://framerusercontent.com/images/KYrKdcBYQH3W8uXXhi1V3WfZss.jpg',
+    image: emergencyImage,
     link: 'https://foodjusticeresearch.ca/challenges-emergency-food-charity',
   },
   {
     title: 'Poverty and Corporate Greed',
-    image: 'https://framerusercontent.com/images/e8J8E5eYvhfEhxMBcSZMKbynYE.jpg',
+    image: povertyImage,
     link: 'https://foodjusticeresearch.ca/challenges-poverty-corporate-greed',
   },
   {
     title: 'Built-in Competition and Power Imbalances',
-    image: 'https://framerusercontent.com/images/77HphpE6HipyJjg1etIr16KaC0.jpg',
+    image: powerImage,
     link: 'https://foodjusticeresearch.ca/challenges-competition-power-imbalance',
   },
 ];
