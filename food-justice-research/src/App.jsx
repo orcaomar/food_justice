@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import Research from './components/Research';
 import GetInvolved from './pages/GetInvolved';
 import ChallengesPage from './pages/Challenges';
+import IncreasingFoodInsecurity from './pages/IncreasingFoodInsecurity';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         } />
         <Route path="/research" element={<Research />} />
         <Route path="/challenges" element={<ChallengesPage />} />
+        <Route path="/challenges/increasing-and-deepening-food-insecurity" element={<IncreasingFoodInsecurity />} />
         <Route path="/community-ideas" element={<CommunityIdeas />} />
         <Route path="/get-involved" element={<GetInvolved />} />
       </Routes>
