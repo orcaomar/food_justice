@@ -14,8 +14,15 @@ export const communityIdeas = {
         {
           title: 'Create a local marketplace',
           text: 'Create a local marketplace where women in the community can come together to sell things they make, like clothing or offer services.',
-          audioSrc: '../assets/audio/placeholder.mp3',
-          transcript: 'This is a placeholder transcript for creating a local marketplace.',
+          audioSrc: '../assets/audio/sonia-farah-Luannhost-residents.mp3',
+          transcript: `Sonia: Now I was going to say, so one of the things that I always wanted to see …. If there's a way that we could have some type of a hub where women … There are many talented women in the area, whether they're dress makers or those eyebrow [braiders] or whatever, and we can come every Saturday and Sunday, or even during the week, now that it's summertime, that we can just come and have a marketplace where we can sell. But the City makes it so hard sometimes. I don't know if there's a space that we can do it, but if there are ways that we can help generate some income, this is definitely something that's needed. I don't know what that would even look like. I just have this crazy idea in my mind, but it would definitely help  to offset some costs.
+
+Luann [Host]: It's a very interesting idea. And it's also recognizing that people in the community have skills, have resources.
+
+Farah: Yeah.
+
+Sonia: Definitely.
+Farah: Yeah. I probably can do that. [Residents]`,
         },
         {
           title: 'Give people opportunities to produce their own food',
