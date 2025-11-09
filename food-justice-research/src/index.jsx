@@ -4,6 +4,10 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import ScrollToTop from './components/ScrollToTop';
+import { initGA } from './utils/google-analytics';
+
+initGA();
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
