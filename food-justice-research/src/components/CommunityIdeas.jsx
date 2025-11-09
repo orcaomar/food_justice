@@ -4,7 +4,6 @@ import headerBackground from '../assets/community-ideas/lNM99SIW9C84CO5V14Lr7nmp
 import ideaImage from '../assets/community-ideas/Sd001QxeO4hwIqVmW0kIJSxl5cU.jpg';
 import { communityIdeas } from './CommunityIdeasData';
 import Overlay from './Overlay';
-import placeholderAudio from '../assets/audio/placeholder.mp3';
 
 const CommunityIdeas = () => {
   const [selectedCard, setSelectedCard] = useState(null);
@@ -70,7 +69,7 @@ const CommunityIdeas = () => {
           isOpen={!!selectedCard}
           onClose={closeOverlay}
           title={selectedCard.title}
-          audioSrc={placeholderAudio}
+          audioSrc={selectedCard.audioSrc}
           transcript={selectedCard.transcript}
         />
       )}
