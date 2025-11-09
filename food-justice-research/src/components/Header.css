@@ -28,3 +28,23 @@ nav a {
   font-size: 15px;
   font-weight: 500;
 }
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  nav {
+    margin-top: 20px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav li {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+}
