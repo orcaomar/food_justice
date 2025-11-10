@@ -1,11 +1,40 @@
 .challenge-page {
-  padding: 2rem;
+  padding-left: clamp(1rem, 5vw, 6rem);
+  padding-right: clamp(1rem, 5vw, 6rem);
+  /* 2. Sets the maximum width for the content area */
+  max-width: 1200px; 
+
+  /* 3. Centers the container on the page */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  /* * clamp(MINIMUM SIZE, PREFERRED/SCALING SIZE, MAXIMUM SIZE)
+  */
+  font-size: clamp(2rem, 5vw, 4rem); 
+  line-height: 1; /* Recommended for large headings */
+  text-align: center;
+}
+
+h2 {
+  /* * clamp(MINIMUM SIZE, PREFERRED/SCALING SIZE, MAXIMUM SIZE)
+  */
+  font-size: clamp(1.5rem, 3vw, 4rem); 
+  line-height: 1; /* Recommended for large headings */
+
 }
 
 .main-image {
   width: 100%;
-  height: auto;
-  margin-bottom: 2rem;
+  max-width: 800px;
+  /*height: auto;*/
+  aspect-ratio: 16 / 9;
+  margin: 0 auto 2rem;
+  /* Styling for image content control (from previous response) */
+  object-fit: cover;
+  object-position: center center;
+  display: block
 }
 
 .summary {
@@ -36,8 +65,9 @@
 }
 
 .image-container img {
-  width: 100%;
-  height: auto;
+  width: 85%;
+  aspect-ratio: 17 / 11;
+  
 }
 
 .text-container {
