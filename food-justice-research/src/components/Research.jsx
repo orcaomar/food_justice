@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 import './Research.css';
 import headerBg from '../assets/research/DQaUHWzldUNQUDV8Bk1igtA3s.jpg';
@@ -24,31 +25,31 @@ const Research = () => {
 
       <section className="testimonials">
         <div className="card">
-          <h3><a href="https://foodjusticeresearch.ca/challenges-developing-severity">Increasing and deepening food insecurity</a></h3>
+          <h3><Link to="/challenges/increasing-and-deepening-food-insecurity">Increasing and deepening food insecurity</Link></h3>
           <p>Many more individuals and families in Flemingdon Park and Thorncliffe Park rely on emergency food distribution services since the ongoing dual crisis – public health and inflation – of the pandemic. And food insecurity is about so much more than food.</p>
         </div>
         <div className="card">
-          <h3><a href="https://foodjusticeresearch.ca/challenges-stigmatization">The stigmatization, shame, and indignity of food insecurity</a></h3>
+          <h3><Link to="/challenges/stigmatization">The stigmatization, shame, and indignity of food insecurity</Link></h3>
           <p>Charity, in the form of emergency food distribution programs, comes with surveillance, judgment, and devaluation, and does nothing to address underlying needs.</p>
         </div>
         <div className="card">
-          <h3><a href="https://foodjusticeresearch.ca/challenges-emergency-food-charity">Emergency Food Charity</a></h3>
+          <h3><Link to="/challenges/emergency-food-charity">Emergency Food Charity</Link></h3>
           <p>Residents encouraged researchers and workers to adopt a self-critical perspective, to consider the ways in which we are part of the system that maintains food insecurity for certain individuals and groups.</p>
         </div>
         <div className="card">
-          <h3><a href="https://foodjusticeresearch.ca/challenges-unaffordability">The unaffordability of everyday necessities</a></h3>
+          <h3><Link to="/challenges/unaffordability">The unaffordability of everyday necessities</Link></h3>
           <p>A devastating reality for families is high (and rising) rent, even for small and unsuitable housing; increased food prices, especially since the pandemic; in combination with steadily inadequate (or declining) family income.</p>
         </div>
         <div className="card">
-          <h3><a href="https://foodjusticeresearch.ca/challenges-competition-power-imbalance">Structured competition, power imbalances, and fragmentation</a></h3>
+          <h3><Link to="/challenges/competition-power-imbalance">Structured competition, power imbalances, and fragmentation</Link></h3>
           <p>Cooperation and collaboration among agencies and grassroots initiatives are undermined by competitive and short-term funding of social programs and barriers to decision-making and influence.</p>
         </div>
         <div className="card">
-          <h3><a href="https://foodjusticeresearch.ca/challenges-labour-market-exploitation">Labour market exclusion and exploitation</a></h3>
+          <h3><Link to="/challenges/labour-market-exploitation">Labour market exclusion and exploitation</Link></h3>
           <p>Employment opportunities, especially for immigrants and refugees, are limited to low-wage precarious jobs. Credentials are often not recognized.</p>
         </div>
         <div className="card">
-          <h3><a href="https://foodjusticeresearch.ca/challenges-poverty-corporate-greed">Every day and every night, poverty feeds corporate greed</a></h3>
+          <h3><Link to="/challenges/poverty-corporate-greed">Every day and every night, poverty feeds corporate greed</Link></h3>
           <p>The system is rigged to sustain and increase the wealth of a few and the dispossession of many.</p>
         </div>
       </section>
