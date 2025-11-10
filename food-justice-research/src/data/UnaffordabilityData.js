@@ -10,7 +10,7 @@ import accessToOtherSupports from '../assets/challenges/sub_pages/D4NsYSKqRhOnMN
 const unaffordabilityData = {
   title: 'Unaffordability',
   image: unaffordability,
-  summary: 'Food, rent, most everything is becoming unaffordable, and residents are finding this challenge increasingly difficult to navigate.',
+  subTitle: 'Food, rent, most everything is becoming unaffordable, and residents are finding this challenge increasingly difficult to navigate.',
   sections: [
     {
       title: 'Canadian "Dream"',

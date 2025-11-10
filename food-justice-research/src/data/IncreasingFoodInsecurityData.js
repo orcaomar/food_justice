@@ -13,7 +13,7 @@ import supplyDemand from '../assets/challenges/sub_pages/LE7GEHXcWeliI7TQkDKr7Zs
 export const increasingFoodInsecurityData = {
   title: 'Increasing and Deepening Food Insecurity',
   image: insecurity,
-  summary: `Many more individuals and families in Flemingdon Park and Thorncliffe Park rely on emergency food distribution services since the ongoing dual crises – public health and inflation – of the pandemic. The TNO Food Collaborative served 1089 unique households in 2021, and 2322 in 2022, or an increase of 113% from 2021 to 2022. In Toronto more broadly, reliance on food banks was 16% higher than ever in 2022 (Who’s Hungry Report 2022 - Daily Bread Food Bank).`,
+  subTitle: `Many more individuals and families in Flemingdon Park and Thorncliffe Park rely on emergency food distribution services since the ongoing dual crises – public health and inflation – of the pandemic. The TNO Food Collaborative served 1089 unique households in 2021, and 2322 in 2022, or an increase of 113% from 2021 to 2022. In Toronto more broadly, reliance on food banks was 16% higher than ever in 2022 (Who’s Hungry Report 2022 - Daily Bread Food Bank).`,
   sections: [
     {
       title: 'Increasing Demands',
