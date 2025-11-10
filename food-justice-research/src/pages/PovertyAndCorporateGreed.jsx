@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import PovertyAndCorporateGreedData from '../data/PovertyAndCorporateGreedData';
+import LazyLoadImage from '../components/LazyLoadImage';
 import './PovertyAndCorporateGreed.css';
 
 const PovertyAndCorporateGreed = () => {
@@ -19,7 +20,11 @@ const PovertyAndCorporateGreed = () => {
   return (
     <div className="poverty-and-corporate-greed">
       <h1>{title}</h1>
-      <img src={image} alt={title} className="main-image" />
+      <LazyLoadImage
+        src={image}
+        alt={title}
+        className="main-image"
+      />
       <p className="summary">{subTitle}</p>
 
       <div className="sections">
@@ -27,7 +32,10 @@ const PovertyAndCorporateGreed = () => {
           <div key={index} className={`section ${section.image ? (index % 2 === 0 ? 'image-left' : 'image-right') : 'text-only'}`}>
             {section.image && (
               <div className="image-container">
-                <img src={section.image} alt={section.title} />
+                <LazyLoadImage
+                  src={section.image}
+                  alt={section.title}
+                />
               </div>
             )}
             <div className="text-container">

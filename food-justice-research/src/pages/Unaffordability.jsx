@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import UnaffordabilityData from '../data/UnaffordabilityData';
+import LazyLoadImage from '../components/LazyLoadImage';
 import './Unaffordability.css';
 
 const Unaffordability = () => {
@@ -12,14 +13,21 @@ const Unaffordability = () => {
   return (
     <div className="unaffordability">
       <h1>{title}</h1>
-      <img src={image} alt={title} className="main-image" />
+      <LazyLoadImage
+        src={image}
+        alt={title}
+        className="main-image"
+      />
       <p className="summary">{subTitle}</p>
 
       <div className="sections">
         {sections.map((section, index) => (
           <div key={index} className={`section ${index % 2 === 0 ? 'image-left' : 'image-right'}`}>
             <div className="image-container">
-              <img src={section.image} alt={section.title} />
+              <LazyLoadImage
+                src={section.image}
+                alt={section.title}
+              />
             </div>
             <div className="text-container">
               <h2>{section.title}</h2>
