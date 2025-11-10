@@ -54,6 +54,10 @@ h2 {
   display: flex;
   gap: 2rem;
   align-items: center;
+  /* Smooth transition for the zoom effect */
+  transition: transform 0.4s ease-in-out; /* Made animation smoother */
+  /* Ensures the zoom is centered */
+  transform-origin: center;
 }
 
 .section.image-right {
