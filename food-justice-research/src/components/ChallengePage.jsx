@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import LazyLoadImage from './LazyLoadImage';
 import Overlay from './Overlay';
+import Challenges from './Challenges';
 import './ChallengePage.css';
 
 // You can tweak these values to adjust the zoom effect
@@ -125,6 +126,7 @@ const ChallengePage = ({ data }) => {
           transcript={overlayData.transcript}
         />
       )}
+      <Challenges />
     </div>
   );
 };
