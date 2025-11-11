@@ -1,14 +1,14 @@
 
-import insecurity from '../assets/challenges/sub_pages/grx5WPQXF83mssd35daufnpmbA.jpg';
-import increasingDemands from '../assets/challenges/sub_pages/2r4HDXaV26G2dKJHIjHbSIvODBs.jpg';
-import pandemicEffects from '../assets/challenges/sub_pages/JHnVuCjloDQvocQtyI191VqEu38.jpg';
-import moreThanFood from '../assets/challenges/sub_pages/pInup2RZK2aHOuRYlyOzYZ20KRs.jpg';
-import hiddenTolls from '../assets/challenges/sub_pages/VQOyXbREjKJDsjZUhsax5hTBc.jpg';
-import meetingDemands from '../assets/challenges/sub_pages/3xs8blCwG3u9Ri7893nVhJrlIm4.jpg';
-import complexity from '../assets/challenges/sub_pages/ahQq46ELY3XcKLGHecbrhSv5PS8.jpg';
-import childrensHealth from '../assets/challenges/sub_pages/ROvC8ukEH4bj8EPNQLu8Yr2r2s8.jpg';
-import foodBank from '../assets/challenges/sub_pages/iUKFDgtehToaeU7EumG7q83L9r0.jpg';
-import supplyDemand from '../assets/challenges/sub_pages/LE7GEHXcWeliI7TQkDKr7Zscdu4.jpg';
+import insecurity from '../assets/challenges/sub_pages/grx5WPQXF83mssd35daufnpmbA.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import increasingDemands from '../assets/challenges/sub_pages/2r4HDXaV26G2dKJHIjHbSIvODBs.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import pandemicEffects from '../assets/challenges/sub_pages/JHnVuCjloDQvocQtyI191VqEu38.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import moreThanFood from '../assets/challenges/sub_pages/pInup2RZK2aHOuRYlyOzYZ20KRs.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import hiddenTolls from '../assets/challenges/sub_pages/VQOyXbREjKJDsjZUhsax5hTBc.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import meetingDemands from '../assets/challenges/sub_pages/3xs8blCwG3u9Ri7893nVhJrlIm4.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import complexity from '../assets/challenges/sub_pages/ahQq46ELY3XcKLGHecbrhSv5PS8.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import childrensHealth from '../assets/challenges/sub_pages/ROvC8ukEH4bj8EPNQLu8Yr2r2s8.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import foodBank from '../assets/challenges/sub_pages/iUKFDgtehToaeU7EumG7q83L9r0.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import supplyDemand from '../assets/challenges/sub_pages/LE7GEHXcWeliI7TQkDKr7Zscdu4.jpg?w=400;800;1200&format=webp;jpg&srcset';
 
 import demandsAudio from '../assets/audio/Tara-Omar-maryam-Workers.mp3';
 import pandemicAudio from '../assets/audio/Maryam-Worker.mp3';

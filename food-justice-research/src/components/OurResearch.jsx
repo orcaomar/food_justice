@@ -1,13 +1,14 @@
 import React from 'react';
 import './OurResearch.css';
-import researchImg from '../assets/homepage/ffGXRcDfMvqRSS8GbduWhBgfzlQ.jpg';
+import ResponsiveImage from './ResponsiveImage';
+import researchImg from '../assets/homepage/ffGXRcDfMvqRSS8GbduWhBgfzlQ.jpg?w=400;800;1200&format=webp;jpg&srcset';
 
 const OurResearch = () => {
   return (
     <section className="our-research">
       <div className="research-content">
         <div className="research-image">
-          <img src={researchImg} alt="Our Research" />
+          <ResponsiveImage src={researchImg} alt="Our Research" />
         </div>
         <div className="research-text">
           <h2>Our Research</h2>

@@ -3,9 +3,10 @@ import useDocumentTitle from '../hooks/useDocumentTitle';
 import './CommunityIdeas.css';
 import '../index.css';
 import headerBackground from '../assets/community-ideas/lNM99SIW9C84CO5V14Lr7nmp1s.jpg';
-import ideaImage from '../assets/community-ideas/Sd001QxeO4hwIqVmW0kIJSxl5cU.jpg';
+import ideaImage from '../assets/community-ideas/Sd001QxeO4hwIqVmW0kIJSxl5cU.jpg?w=60;120&format=webp;jpg&srcset';
 import { communityIdeas } from './CommunityIdeasData';
 import Overlay from './Overlay';
+import ResponsiveImage from './ResponsiveImage';
 import { trackEvent } from '../utils/google-analytics';
 
 const CommunityIdeas = () => {
@@ -39,7 +40,7 @@ const CommunityIdeas = () => {
                 <div key={cardIndex} style={{ flex: '1 0 300px', maxWidth: '320px', cursor: 'pointer' }} onClick={() => openOverlay(card)}>
                   <div className="idea-card">
                     <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
-                      <img src={ideaImage} alt="" style={{ width: '60px', height: '60px', borderRadius: '50%' }} />
+                      <ResponsiveImage src={ideaImage} alt="" style={{ width: '60px', height: '60px', borderRadius: '50%' }} />
                       <div style={{ flex: '1 0 0px' }}>
                         <h3 style={{ fontFamily: 'Urbanist, sans-serif', fontSize: '18px' }}>{card.title}</h3>
                       </div>

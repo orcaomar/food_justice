@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 import './Research.css';
 import headerBg from '../assets/research/DQaUHWzldUNQUDV8Bk1igtA3s.jpg';
-import projectGoalsImg from '../assets/research/cjRR1Ssh7HNarcSqiHBa4XK6Us.jpg';
-import actionPlanImg from '../assets/research/ZmnNohA0Ep8HWcizFZaeBOYFHg.jpg';
-import luannImg from '../assets/research/iEPxox514vmq2re5m1VYua1nYY.jpeg';
-import omarImg from '../assets/research/mrPmoma8Y0m7QjiDXyKdr7Imc.jpg';
-import safeeraImg from '../assets/research/8O5XGyZcf1zQnohczPYDF1ceMA.png';
+import projectGoalsImg from '../assets/research/cjRR1Ssh7HNarcSqiHBa4XK6Us.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import actionPlanImg from '../assets/research/ZmnNohA0Ep8HWcizFZaeBOYFHg.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import luannImg from '../assets/research/iEPxox514vmq2re5m1VYua1nYY.jpeg?w=200;400;600&format=webp;jpeg&srcset';
+import omarImg from '../assets/research/mrPmoma8Y0m7QjiDXyKdr7Imc.jpg?w=200;400;600&format=webp;jpg&srcset';
+import safeeraImg from '../assets/research/8O5XGyZcf1zQnohczPYDF1ceMA.png?w=200;400;600&format=webp;png&srcset';
 import Accordion from './Accordion';
+import ResponsiveImage from './ResponsiveImage';
 
 const Research = () => {
   useDocumentTitle('Research | Flemingdon & Thorncliffe Food Justice | Toronto, Canada');
@@ -62,13 +63,13 @@ const Research = () => {
           <p><strong>Build capacity</strong> of local agencies and residents through community leadership and co-creation in all stages of the research, including paid positions for community researchers.</p>
         </div>
         <div className="image-container">
-          <img src={projectGoalsImg} alt="Project Goals" />
+          <ResponsiveImage src={projectGoalsImg} alt="Project Goals" />
         </div>
       </section>
 
       <section className="action-plan">
         <div className="image-container">
-          <img src={actionPlanImg} alt="Action Plan" />
+          <ResponsiveImage src={actionPlanImg} alt="Action Plan" />
         </div>
         <div className="content">
           <h2>Action Plan</h2>
@@ -135,17 +136,17 @@ const Research = () => {
         <h2>Team Members</h2>
         <div className="team-grid">
           <div className="team-member-card">
-            <img src={luannImg} alt="Luann Good Gingrich" />
+            <ResponsiveImage src={luannImg} alt="Luann Good Gingrich" />
             <h3>Luann Good Gingrich</h3>
             <p>Professor, York University and Director, Global Labour Research Centre.</p>
           </div>
           <div className="team-member-card">
-            <img src={omarImg} alt="Omar Khan" />
+            <ResponsiveImage src={omarImg} alt="Omar Khan" />
             <h3>Omar Khan</h3>
             <p>Coordinator, Engaged Communities and advocate for refugee newcomers</p>
           </div>
           <div className="team-member-card">
-            <img src={safeeraImg} alt="Safeera Hatia" />
+            <ResponsiveImage src={safeeraImg} alt="Safeera Hatia" />
             <h3>Safeera Hatia</h3>
             <p>Community Researcher, resident and co-founder, Friends of Thorncliffe Park</p>
           </div>
