@@ -2,15 +2,19 @@ import React from "react";
 import useDocumentTitle from "../hooks/useDocumentTitle";
 import { getInvolvedData } from "../data/GetInvolvedData";
 import "./GetInvolved.css";
+import ResponsiveImage from "../components/ResponsiveImage";
 
 const GetInvolved = () => {
   useDocumentTitle('Get Involved | Flemingdon & Thorncliffe Food Justice | Toronto, Canada');
   return (
     <div className="get-involved">
-      <section className="masthead" style={{ backgroundImage: `url(${getInvolvedData.masthead.backgroundImage})` }}>
-        <h1>{getInvolvedData.masthead.title}</h1>
-        <p>{getInvolvedData.masthead.subtitle}</p>
-      </section>
+      <div className="masthead">
+        <ResponsiveImage src={getInvolvedData.masthead.backgroundImage} alt={getInvolvedData.masthead.title} className="masthead-image" />
+        <div className="masthead-overlay">
+          <h1>{getInvolvedData.masthead.title}</h1>
+          <p>{getInvolvedData.masthead.subtitle}</p>
+        </div>
+      </div>
 
       <section className="banner">
         <p>{getInvolvedData.banner.text}</p>

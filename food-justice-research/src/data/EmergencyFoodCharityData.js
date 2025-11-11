@@ -1,9 +1,9 @@
-import backgroundImage from '../assets/challenges/sub_pages/nTLtcJUsXxDqoxhlnfDWhl856c.jpg'
-import improvingImage from '../assets/challenges/sub_pages/dXuIOhT89j4JjCm0X8sqQR96xo.jpg';
-import foodBoxesImage from '../assets/challenges/sub_pages/3xs8blCwG3u9Ri7893nVhJrlIm4.jpg';
-import sourcingImage from '../assets/challenges/sub_pages/qtR5Qc9ZZzvlsVaKBeHUNvsJLIY.jpg';
-import exclusionImage from '../assets/challenges/sub_pages/a8PagIwuhIcWnGnFwW6XCVBmA.jpg';
-import challengingImage from '../assets/challenges/sub_pages/JYatgq29ujUBUusK4CxDLUV04.jpg';
+import backgroundImage from '../assets/challenges/sub_pages/nTLtcJUsXxDqoxhlnfDWhl856c.jpg?w=400;800;1200&format=webp;jpg&srcset'
+import improvingImage from '../assets/challenges/sub_pages/dXuIOhT89j4JjCm0X8sqQR96xo.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import foodBoxesImage from '../assets/challenges/sub_pages/3xs8blCwG3u9Ri7893nVhJrlIm4.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import sourcingImage from '../assets/challenges/sub_pages/qtR5Qc9ZZzvlsVaKBeHUNvsJLIY.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import exclusionImage from '../assets/challenges/sub_pages/a8PagIwuhIcWnGnFwW6XCVBmA.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import challengingImage from '../assets/challenges/sub_pages/JYatgq29ujUBUusK4CxDLUV04.jpg?w=400;800;1200&format=webp;jpg&srcset';
 
 import improvingAudio from "../assets/audio/Naila It's Not Enough_trimmed.mp3";
 import foodBoxesAudio from "../assets/audio/Ava people who do access food banks_trimmed.mp3";

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import LazyLoadImage from './LazyLoadImage';
+import ResponsiveImage from './ResponsiveImage';
 import Overlay from './Overlay';
 import Challenges from './Challenges';
 import './ChallengePage.css';
@@ -82,7 +82,7 @@ const ChallengePage = ({ data }) => {
   return (
     <div className="challenge-page">
       <h1>{title}</h1>
-      <LazyLoadImage
+      <ResponsiveImage
         src={image}
         alt={title}
         className="main-image"
@@ -98,7 +98,7 @@ const ChallengePage = ({ data }) => {
           >
             {section.image && (
               <div className="image-container">
-                <LazyLoadImage
+                <ResponsiveImage
                   src={section.image}
                   alt={section.title}
                 />

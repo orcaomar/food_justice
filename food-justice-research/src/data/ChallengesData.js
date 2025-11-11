@@ -1,10 +1,10 @@
-import severityImage from '../assets/challenges/grx5WPQXF83mssd35daufnpmbA.jpg';
-import unaffordabilityImage from '../assets/challenges/cV4W8BowN8UqD6sZS7XPqmCrj8.jpg';
-import exclusionImage from '../assets/challenges/eR1qJVz40AaT7V3YCrMA26P0cpo.jpg';
-import stigmatizationImage from '../assets/challenges/TPaxET9KbXqsDgAfGonreR2Le0.jpg';
-import emergencyImage from '../assets/challenges/KYrKdcBYQH3W8uXXhi1V3WfZss.jpg';
-import povertyImage from '../assets/challenges/e8J8E5eYvhfEhxMBcSZMKbynYE.jpg';
-import powerImage from '../assets/challenges/77HphpE6HipyJjg1etIr16KaC0.jpg';
+import severityImage from '../assets/challenges/grx5WPQXF83mssd35daufnpmbA.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import unaffordabilityImage from '../assets/challenges/cV4W8BowN8UqD6sZS7XPqmCrj8.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import exclusionImage from '../assets/challenges/eR1qJVz40AaT7V3YCrMA26P0cpo.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import stigmatizationImage from '../assets/challenges/TPaxET9KbXqsDgAfGonreR2Le0.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import emergencyImage from '../assets/challenges/KYrKdcBYQH3W8uXXhi1V3WfZss.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import povertyImage from '../assets/challenges/e8J8E5eYvhfEhxMBcSZMKbynYE.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import powerImage from '../assets/challenges/77HphpE6HipyJjg1etIr16KaC0.jpg?w=400;800;1200&format=webp;jpg&srcset';
 
 const challenges = [
   {

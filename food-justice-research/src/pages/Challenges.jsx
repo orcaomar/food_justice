@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import challenges from '../data/ChallengesData';
 import './Challenges.css';
+import ResponsiveImage from '../components/ResponsiveImage';
 
 const Challenges = () => {
   useEffect(() => {
@@ -28,7 +29,7 @@ const Challenges = () => {
         {challenges.map((challenge, index) => (
           <div className="challenge-card" key={index}>
             <h3>{challenge.title}</h3>
-            <img
+            <ResponsiveImage
               src={challenge.imageUrl}
               alt={challenge.title}
               className="challenge-image"

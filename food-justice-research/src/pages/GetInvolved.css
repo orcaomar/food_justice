@@ -1,5 +1,30 @@
 @import '../components/Masthead.css';
 
+.get-involved .masthead {
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.get-involved .masthead-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.get-involved .masthead-overlay {
+  position: relative;
+  z-index: 1;
+}
+
 .get-involved .banner {
   background: linear-gradient(180deg, #b5c99a 0%, #faf8ea 100%);
   padding: 45px 40px;

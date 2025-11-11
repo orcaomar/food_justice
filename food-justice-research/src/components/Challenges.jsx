@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Challenges.css';
 import challenges from '../data/ChallengesData';
+import ResponsiveImage from './ResponsiveImage';
 
 const Challenges = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -23,7 +24,7 @@ const Challenges = () => {
             <div className="slide" key={index}>
               <div className="challenge-card">
                 <h3>{challenge.title}</h3>
-                <img src={challenge.imageUrl} alt={challenge.title} />
+                <ResponsiveImage src={challenge.imageUrl} alt={challenge.title} />
                 <a href={challenge.link} className="learn-more-button">Learn more</a>
               </div>
             </div>
