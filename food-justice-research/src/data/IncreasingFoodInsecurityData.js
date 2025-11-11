@@ -10,6 +10,8 @@ import childrensHealth from '../assets/challenges/sub_pages/ROvC8ukEH4bj8EPNQLu8
 import foodBank from '../assets/challenges/sub_pages/iUKFDgtehToaeU7EumG7q83L9r0.jpg';
 import supplyDemand from '../assets/challenges/sub_pages/LE7GEHXcWeliI7TQkDKr7Zscdu4.jpg';
 
+import demandsAudio from '../assets/audio/Tara-Omar-maryam-Workers.mp3';
+
 export const increasingFoodInsecurityData = {
   title: 'Increasing and Deepening Food Insecurity',
   image: insecurity,
@@ -19,8 +21,32 @@ export const increasingFoodInsecurityData = {
       title: 'Increasing Demands',
       text: 'Agency and grassroots workers discussed the challenge of increasing demand for emergency food services.',
       image: increasingDemands,
-      audio: 'placeholder.mp3',
-      transcript: 'Placeholder transcript',
+      audio: demandsAudio,
+      transcript: `Tara: Every week we're probably seeing a 13% increase with clients, and – 
+
+Ali (Host): 
+Did you say every week?
+
+Tara: 
+Yeah. Every week. So we get new clients every week. We already are struggling to support the clients we have currently. So we have... The food bank's open on Tuesdays and Wednesdays right now. And on Tuesdays, of course that's the day we have a lot of stuff in our food bank. And clients come in and we're always seeing the sense of... if they come on Wednesdays, they know that they're going to get less opportunity to get a good load of food, because by the end of the day on Wednesday, we've run out of dairy, we've run out of milk and eggs and bread. And so some clients are showing up, say, on Monday, with, "Can I just come today before the food bank starts, because we want to get..." So we are seeing clients that are feeling the panic of not being able to be provided with enough from us. So I think that's a big problem right now that we would like to see what we can do. Of course, we're not getting enough, we are constantly going to keep looking for resources to try and get food so that we can support as much as possible.
+
+Maryam: 
+Just to get the sense of it, how many clients are you serving every week?
+
+Tara: 
+I'd say on average around 400.
+
+Maryam: 
+Every week, that is?
+
+Tara: 
+Yeah. We serve the clients biweekly. And then of course there's lots of clients who have missed their appointments. And so the average of 400 is clients who actually manage to show up.
+
+Maryam:  
+And on top of that, you say that every week there are more clients?
+
+Tara: 
+So every week we get new clients. We also get some people that aren't scheduled and we accommodate because of course we're not going to turn clients away. The way that we're approaching it right now is that you come and, we're not going to hold the food in case people don't show up too. So really it's the luck of the draw. Whoever gets to come in gets food, and we do our best to provide that. `,
     },
     {
       title: 'The Pandemic Effects',
