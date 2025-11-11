@@ -1,4 +1,5 @@
 // TODO: Replace with local image when available
+//import backgroundImage from '../assets/get-involved/GBXvrS20PXQxposzZLFQQ3FES9U.jpg?w=400;800;1200&format=webp;jpg&srcset';
 import backgroundImage from '../assets/get-involved/GBXvrS20PXQxposzZLFQQ3FES9U.jpg?w=400;800;1200&format=webp;jpg&srcset';
 
 export const getInvolvedData = {

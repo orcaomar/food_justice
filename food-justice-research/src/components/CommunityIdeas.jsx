@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 import './CommunityIdeas.css';
 import '../index.css';
-import headerBackground from '../assets/community-ideas/lNM99SIW9C84CO5V14Lr7nmp1s.jpg';
+import headerBackground from '../assets/community-ideas/lNM99SIW9C84CO5V14Lr7nmp1s.jpg?w=400;800;1200&format=webp;jpg&srcset';
 import ideaImage from '../assets/community-ideas/Sd001QxeO4hwIqVmW0kIJSxl5cU.jpg?w=60;120&format=webp;jpg&srcset';
 import { communityIdeas } from './CommunityIdeasData';
 import Overlay from './Overlay';
@@ -23,13 +23,19 @@ const CommunityIdeas = () => {
   };
 
   return (
-    <div style={{ backgroundColor: '#faf8ea' }}>
-      <div className="masthead" style={{ backgroundImage: `url(${headerBackground})` }}>
-        <div style={{ textAlign: 'center' }}>
+    <div className="community-ideas">
+      <div className="masthead">
+        <ResponsiveImage
+          src={headerBackground}
+          alt="Community gathering"
+          className="masthead-image"
+        />
+        <div className="masthead-overlay">
           <h1>{communityIdeas.header.title}</h1>
           <p>{communityIdeas.header.subtitle}</p>
         </div>
       </div>
+
       <div style={{ padding: '0 40px 100px' }}>
         {communityIdeas.sections.map((section, index) => (
           <div key={index} style={{ marginBottom: '60px' }}>

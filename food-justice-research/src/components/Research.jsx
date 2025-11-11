@@ -15,10 +15,12 @@ const Research = () => {
   useDocumentTitle('Research | Flemingdon & Thorncliffe Food Justice | Toronto, Canada');
   return (
     <div className="research-container">
-      <header className="research-header" style={{ backgroundImage: `url(${headerBg})` }}>
-        <h1>Our Research</h1>
-        <p>This research – past and present – belongs to the community. We designed our research methods and questions to address research needs identified by residents and workers.</p>
-      </header>
+      <div className="masthead" style={{ backgroundImage: `url(${headerBg})` }}>
+        <div style={{ textAlign: 'center' }}>
+          <h1>Our Research</h1>
+          <p>This research – past and present – belongs to the community. We designed our research methods and questions to address research needs identified by residents and workers.</p>
+        </div>
+      </div>
 
       <section className="what-we-learned">
         <h2>What We Learned</h2>

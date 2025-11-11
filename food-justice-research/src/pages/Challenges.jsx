@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import challenges from '../data/ChallengesData';
 import './Challenges.css';
 import ResponsiveImage from '../components/ResponsiveImage';
-
+import headerBackground from '../assets/challenges/Rpn5t3gee6lAsbzLDCUvpXmQvkY.png';
 const Challenges = () => {
   useEffect(() => {
     document.title = 'Challenges | Flemingdon & Thorncliffe Food Justice | Toronto, Canada';
@@ -11,12 +11,7 @@ const Challenges = () => {
 
   return (
     <section className="challenges-page">
-      <div className="masthead">
-        <img
-          src="https://framerusercontent.com/images/Rpn5t3gee6lAsbzLDCUvpXmQvkY.png"
-          alt="Masthead"
-          className="masthead-image"
-        />
+      <div className="masthead" style={{ backgroundImage: `url(${headerBackground})` }}>
         <div className="masthead-overlay">
           <h1>Challenges</h1>
           <p>

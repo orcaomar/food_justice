@@ -1,5 +1,30 @@
 @import './Masthead.css';
 
+.community-ideas .masthead {
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.community-ideas .masthead-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.community-ideas .masthead-overlay {
+  position: relative;
+  z-index: 1;
+}
+
 .idea-card {
     background-color: #f0f0f0;
     padding: 20px;

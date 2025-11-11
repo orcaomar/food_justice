@@ -9,7 +9,11 @@ const GetInvolved = () => {
   return (
     <div className="get-involved">
       <div className="masthead">
-        <ResponsiveImage src={getInvolvedData.masthead.backgroundImage} alt={getInvolvedData.masthead.title} className="masthead-image" />
+        <ResponsiveImage
+          src={getInvolvedData.masthead.backgroundImage}
+          alt="People working in a community garden"
+          className="masthead-image"
+        />
         <div className="masthead-overlay">
           <h1>{getInvolvedData.masthead.title}</h1>
           <p>{getInvolvedData.masthead.subtitle}</p>
