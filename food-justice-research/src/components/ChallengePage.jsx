@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import LazyLoadImage from './LazyLoadImage';
+import Overlay from './Overlay';
 import './ChallengePage.css';
 
 // You can tweak these values to adjust the zoom effect
@@ -15,6 +16,15 @@ const ZOOM_END_THRESHOLD = 0.8;
 const ChallengePage = ({ data }) => {
   const { title, image, subTitle, sections } = data;
   const sectionRefs = useRef([]);
+  const [overlayData, setOverlayData] = useState(null);
+
+  const openOverlay = (section) => {
+    setOverlayData(section);
+  };
+
+  const closeOverlay = () => {
+    setOverlayData(null);
+  };
 
   useEffect(() => {
     document.title = `${title} | Flemingdon & Thorncliffe Food Justice | Toronto, Canada`;
@@ -96,11 +106,25 @@ const ChallengePage = ({ data }) => {
             <div className="text-container">
               {section.title && <h2>{section.title}</h2>}
               {renderSectionContent(section)}
-              {section.audio && <button className="hear-story-button">Hear Story</button>}
+              {section.audio && (
+                <button className="hear-story-button" onClick={() => openOverlay(section)}>
+                  Hear Story
+                </button>
+              )}
             </div>
           </div>
         ))}
       </div>
+
+      {overlayData && (
+        <Overlay
+          isOpen={!!overlayData}
+          onClose={closeOverlay}
+          title={overlayData.title}
+          audioSrc={overlayData.audio}
+          transcript={overlayData.transcript}
+        />
+      )}
     </div>
   );
 };
