@@ -52,3 +52,9 @@
   font-weight: 600;
   width: fit-content;
 }
+
+@media (max-width: 768px) {
+  .research-content {
+    flex-direction: column;
+  }
+}
