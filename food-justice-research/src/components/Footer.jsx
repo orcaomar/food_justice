@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import './Footer.css';
 
 const Footer = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+  const [submitted, setSubmitted] = useState(false);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -11,12 +18,22 @@ const Footer = () => {
     });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData.entries());
-    console.log('Form data:', data);
-    event.target.reset();
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await fetch('https://submit-form.com/vj5Mry2QV', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+    setFormData({ name: '', email: '', message: '' });
+    setSubmitted(true);
   };
 
   return (
@@ -42,12 +59,33 @@ const Footer = () => {
           </div>
           <div className="footer-column">
             <h3>Get In Touch</h3>
-            <form onSubmit={handleSubmit}>
-              <input type="text" name="name" placeholder="Your name" />
-              <input type="email" name="email" placeholder="Your email" />
-              <textarea name="message" placeholder="Your message"></textarea>
-              <button type="submit">Send</button>
-            </form>
+            {submitted ? (
+              <div>Message submitted.</div>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your name"
+                  value={formData.name}
+                  onChange={handleChange}
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your email"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+                <textarea
+                  name="message"
+                  placeholder="Your message"
+                  value={formData.message}
+                  onChange={handleChange}
+                ></textarea>
+                <button type="submit">Send</button>
+              </form>
+            )}
           </div>
         </div>
       </div>
