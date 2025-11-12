@@ -1,9 +1,4 @@
 
 > food-justice-research@0.1.0 start
-> vite
+> serve -s dist
 
-
-  VITE v7.2.2  ready in 310 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
