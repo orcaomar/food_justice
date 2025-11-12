@@ -100,3 +100,18 @@ p {
   cursor: pointer;
   font-size: 1rem;
 }
+
+@media (max-width: 768px) {
+  .section,
+  .section.image-right {
+    flex-direction: column;
+  }
+
+  .image-container {
+    margin-bottom: 2rem;
+  }
+
+  .image-container img {
+    width: 100%;
+  }
+}
