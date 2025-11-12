@@ -1,6 +1,6 @@
 import ReactGA from 'react-ga4';
 
-const ANALYTICS_ID = "G-XXXXXXXXXX"; // Placeholder
+const ANALYTICS_ID = "G-YGFJP6NY5D"; 
 
 export const initGA = () => {
     if (process.env.NODE_ENV === 'production') {
