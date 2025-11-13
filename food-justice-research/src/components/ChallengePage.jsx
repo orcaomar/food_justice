@@ -22,7 +22,7 @@ const ChallengePage = ({ data }) => {
 
   const openOverlay = (section) => {
     setOverlayData(section);
-    trackEvent('Listening Overlay', 'Open', section.title);
+    trackEvent('Challenge Listening Overlay', 'Open', section.title);
   };
 
   const closeOverlay = () => {
