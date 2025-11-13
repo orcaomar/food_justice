@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { initGA } from './utils/google-analytics';
 import Analytics from './components/Analytics';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -21,6 +22,10 @@ import PovertyAndCorporateGreed from './pages/PovertyAndCorporateGreed';
 import CompetitionAndPowerImbalances from './pages/CompetitionAndPowerImbalances';
 
 function App() {
+  useEffect(() => {
+    initGA();
+  }, []);
+
   return (
     <div className="App">
       <Analytics />
