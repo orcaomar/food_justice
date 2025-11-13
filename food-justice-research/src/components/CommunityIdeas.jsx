@@ -14,7 +14,7 @@ const CommunityIdeas = () => {
   const [selectedCard, setSelectedCard] = useState(null);
 
   const openOverlay = (card) => {
-    trackEvent('Community Ideas', 'Card Click', card.title);
+    trackEvent('Ideas Listening Overlay', 'Open', card.title);
     setSelectedCard(card);
   };
 
