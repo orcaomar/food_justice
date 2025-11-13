@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ResponsiveImage from './ResponsiveImage';
 import Overlay from './Overlay';
+import { trackEvent } from '../utils/google-analytics';
 import Challenges from './Challenges';
 import './ChallengePage.css';
 
@@ -21,6 +22,7 @@ const ChallengePage = ({ data }) => {
 
   const openOverlay = (section) => {
     setOverlayData(section);
+    trackEvent('Listening Overlay', 'Open', section.title);
   };
 
   const closeOverlay = () => {
