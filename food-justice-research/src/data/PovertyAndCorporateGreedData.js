@@ -38,7 +38,7 @@ But I think overall, in the entire country, the rent is high because it's not be
         {
             title: "Rich, but unequal, city",
             text: `Even though Toronto is a rich city, the distribution of economic success over the last two decades has been uneven, and Thorncliffe Park and Flemingdon Park have not benefited nearly as much as other Toronto neighbourhoods. In the figure below, the neighbourhoods of Toronto are shaded according to their 2018 income. Thorncliffe and Flemingdon, like much of North Toronto and Scarborough, are relatively low income (thus light shading) compared to central Toronto, south Etobicoke and the Downtown. Furthermore, the arrows indicate inflation-adjusted income growth from 2001 to 2018, with black arrows indicating an increase and red arrows indicating a decrease, and the arrow length indicating the magnitude of growth. Almost all income growth in Toronto from 2001 to 2018 was concentrated in the downtown of Toronto, and Thorncliffe and Flemingdon have seen very little growth.`,
-            map: '<iframe width="100%" height="632" frameborder="0" src="https://urban-studies-toronto.github.io/CA-median-family-income-toronto/"></iframe>'
+            mapUrl: 'https://urban-studies-toronto.github.io/CA-median-family-income-toronto/'
         },
         {
             title: "Big Profits for Big Business, Increasing Prices for Families",
