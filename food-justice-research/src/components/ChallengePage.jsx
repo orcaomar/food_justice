@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import DOMPurify from 'dompurify';
 import ResponsiveImage from './ResponsiveImage';
 import Overlay from './Overlay';
 import { trackEvent } from '../utils/google-analytics';
@@ -75,10 +76,24 @@ const ChallengePage = ({ data }) => {
   }, []); // Empty dependency array ensures this runs only once on mount
 
   const renderSectionContent = (section) => {
-    if (section.map) {
-      return <div dangerouslySetInnerHTML={{ __html: section.map }} />;
+    if (section.mapUrl) {
+      return (
+        <iframe
+          width="100%"
+          height="632"
+          style={{ border: 'none' }}
+          src={section.mapUrl}
+          title={`${section.title} map`}
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      );
     }
-    return <p>{section.text}</p>;
+    return (
+      <p
+        style={{ whiteSpace: 'pre-wrap' }}
+        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(section.text) }}
+      />
+    );
   };
 
   return (
