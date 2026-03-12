@@ -4,6 +4,19 @@ import { BrowserRouter } from 'react-router-dom';
 import Footer from './Footer';
 
 describe('Footer', () => {
+  let originalFetch;
+
+  beforeEach(() => {
+    originalFetch = global.fetch;
+    global.fetch = vi.fn(() => Promise.resolve({
+      json: () => Promise.resolve({})
+    }));
+  });
+
+  afterEach(() => {
+    global.fetch = originalFetch;
+  });
+
   it('should show "Message submitted." after form submission', async () => {
     render(
       <BrowserRouter>
@@ -23,5 +36,6 @@ describe('Footer', () => {
     fireEvent.click(sendButton);
 
     await screen.findByText('Message submitted.');
+    expect(global.fetch).toHaveBeenCalledTimes(1);
   });
 });
