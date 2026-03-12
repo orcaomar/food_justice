@@ -53,7 +53,7 @@ const Footer = () => {
               <li><Link to="/challenges">Challenges</Link></li>
               <li><Link to="/community-ideas">Community Ideas</Link></li>
               <li><Link to="/get-involved">Get Involved</Link></li>
-              <li><a href="https://drive.google.com/file/d/16kI8PQwdcJub4PZi6A5drXkgXQl25Hir/view?usp=sharing" target="_blank" rel="noopener noreferrer">Research Report</a></li>
+              <li><a href="https://drive.google.com/file/d/1unQy70cFTCWkmr3pEqioJu2WEqgX4aTS/view?usp=sharing" target="_blank" rel="noopener noreferrer">Research Report</a></li>
               <li><a href="https://drive.google.com/file/d/164Xmyw9_4-CXNy9bDpjNHcbw3LB5l2JM/view?usp=sharing" target="_blank" rel="noopener noreferrer">Executive Summary</a></li>
             </ul>
           </div>
