@@ -162,7 +162,7 @@ const Research = () => {
         <h2>Research Report</h2>
         <p>Access the full report and executive summary here!</p>
         <a href="https://drive.google.com/open?id=164Xmyw9_4-CXNy9bDpjNHcbw3LB5l2JM&usp=drive_fs" target="_blank" rel="noopener noreferrer">Executive Summary</a>
-        <a href="https://drive.google.com/file/d/16kI8PQwdcJub4PZi6A5drXkgXQl25Hir/view?usp=sharing" target="_blank" rel="noopener noreferrer">Full Report</a>
+        <a href="https://drive.google.com/file/d/1unQy70cFTCWkmr3pEqioJu2WEqgX4aTS/view?usp=sharing" target="_blank" rel="noopener noreferrer">Full Report</a>
       </section>
     </div>
   );
