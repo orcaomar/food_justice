@@ -30,8 +30,8 @@ const Challenges = () => {
             </div>
           ))}
         </div>
-        <button className="prev-button" onClick={prevSlide}>&#10094;</button>
-        <button className="next-button" onClick={nextSlide}>&#10095;</button>
+        <button className="prev-button" onClick={prevSlide} aria-label="Previous challenge">&#10094;</button>
+        <button className="next-button" onClick={nextSlide} aria-label="Next challenge">&#10095;</button>
       </div>
     </section>
   );

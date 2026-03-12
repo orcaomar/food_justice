@@ -92,7 +92,7 @@ const Footer = () => {
       <div className="footer-bottom">
         <a href="https://www.engagedcommunities.ca/" target="_blank" rel="noopener noreferrer">Engaged Communities © 2023-2024</a>
       </div>
-      <button className="back-to-top" onClick={scrollToTop}>
+      <button className="back-to-top" onClick={scrollToTop} aria-label="Back to top">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M10 0L12.9282 5H7.0718L10 0Z" fill="white" />
           <path d="M10 20L10 4" stroke="white" strokeWidth="2" />

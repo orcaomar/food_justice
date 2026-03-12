@@ -17,7 +17,7 @@ const Overlay = ({ isOpen, onClose, title, audioSrc, transcript }) => {
   return (
     <div className="overlay" onClick={onClose}>
       <div className="overlay-content" onClick={(e) => e.stopPropagation()}>
-        <button className="close-button" onClick={onClose}>
+        <button className="close-button" onClick={onClose} aria-label="Close">
           &times;
         </button>
         <h2>{title}</h2>
