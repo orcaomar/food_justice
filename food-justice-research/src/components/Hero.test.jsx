@@ -14,7 +14,7 @@ describe('Hero Component', () => {
     const video = container.querySelector('video');
     expect(video).toBeInTheDocument();
     expect(video).toHaveAttribute('loop');
-    expect(video).toHaveAttribute('muted');
+    expect(video.muted).toBe(true);
     expect(video).toHaveAttribute('playsinline');
     expect(video).toHaveAttribute('autoplay');
   });

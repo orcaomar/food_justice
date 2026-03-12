@@ -3,6 +3,13 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Footer from './Footer';
 
+// Mock the global fetch API to simulate a successful form submission
+global.fetch = vi.fn(() =>
+  Promise.resolve({
+    json: () => Promise.resolve({ success: true }),
+  })
+);
+
 describe('Footer', () => {
   it('should show "Message submitted." after form submission', async () => {
     render(
