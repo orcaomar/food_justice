@@ -1,5 +1,5 @@
 
-import insecurity from '../assets/challenges/sub_pages/grx5WPQXF83mssd35daufnpmbA.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import insecurity from '../assets/challenges/sub_pages/8yfFlMaoRVgxr9ke1c2E6OG476s.jpg?w=400;800;1200&format=webp;jpg&srcset';
 import increasingDemands from '../assets/challenges/sub_pages/2r4HDXaV26G2dKJHIjHbSIvODBs.jpg?w=400;800;1200&format=webp;jpg&srcset';
 import pandemicEffects from '../assets/challenges/sub_pages/JHnVuCjloDQvocQtyI191VqEu38.jpg?w=400;800;1200&format=webp;jpg&srcset';
 import moreThanFood from '../assets/challenges/sub_pages/pInup2RZK2aHOuRYlyOzYZ20KRs.jpg?w=400;800;1200&format=webp;jpg&srcset';

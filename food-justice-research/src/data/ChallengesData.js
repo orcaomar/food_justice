@@ -1,4 +1,4 @@
-import severityImage from '../assets/challenges/grx5WPQXF83mssd35daufnpmbA.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import severityImage from '../assets/challenges/sub_pages/8yfFlMaoRVgxr9ke1c2E6OG476s.jpg?w=400;800;1200&format=webp;jpg&srcset';
 import unaffordabilityImage from '../assets/challenges/cV4W8BowN8UqD6sZS7XPqmCrj8.jpg?w=400;800;1200&format=webp;jpg&srcset';
 import exclusionImage from '../assets/challenges/eR1qJVz40AaT7V3YCrMA26P0cpo.jpg?w=400;800;1200&format=webp;jpg&srcset';
 import stigmatizationImage from '../assets/challenges/TPaxET9KbXqsDgAfGonreR2Le0.jpg?w=400;800;1200&format=webp;jpg&srcset';
