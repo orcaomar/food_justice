@@ -35,10 +35,14 @@ const ChallengePage = ({ data }) => {
   }, [title]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const viewportHeight = window.innerHeight;
+    let ticking = false;
 
-      sectionRefs.current.forEach(section => {
+    const updateTransforms = () => {
+      const viewportHeight = window.innerHeight;
+      const sectionUpdates = [];
+
+      // READ phase: Get all bounding boxes without writing to the DOM
+      sectionRefs.current.forEach((section, index) => {
         if (section) {
           const { top } = section.getBoundingClientRect();
           const positionInViewport = top / viewportHeight;
@@ -62,16 +66,31 @@ const ChallengePage = ({ data }) => {
 
           // Clamp the scale just in case
           const clampedScale = Math.max(MIN_SCALE, Math.min(MAX_SCALE, scale));
-          section.style.transform = `scale(${clampedScale})`;
+          sectionUpdates.push({ section, clampedScale });
         }
       });
+
+      // WRITE phase: Update all styles at once
+      sectionUpdates.forEach(({ section, clampedScale }) => {
+        section.style.transform = `scale(${clampedScale})`;
+      });
+
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateTransforms);
+        ticking = true;
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Run on initial load
+    updateTransforms(); // Run on initial load
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      ticking = false; // Reset ticking flag on unmount
     };
   }, []); // Empty dependency array ensures this runs only once on mount
 
