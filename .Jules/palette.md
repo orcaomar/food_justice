@@ -1,0 +1,4 @@
+
+## 2024-05-15 - [Refactored Accordion Title to Semantic Button]
+**Learning:** Found an `onClick` event on a generic `div` element acting as an accordion title toggle (`<div className="accordion-title" onClick={...}>`). This common pattern breaks keyboard navigation (tabbing) and lacks semantic meaning for screen readers.
+**Action:** When implementing custom interactive elements like accordions or toggles, always use a native `<button>` element rather than attaching `onClick` to a `div` or `span`. Normalize the button's appearance via CSS (`background: none; border: none; padding: 0; color: inherit; font: inherit; text-align: left; width: 100%;`) to visually match the surrounding design while retaining built-in accessibility benefits (focus management, keyboard activation, screen reader role). Additionally, use `aria-expanded={isOpen}` on the button and `aria-hidden="true"` on any decorative state indicators (+/- icons) to properly convey the control's state.

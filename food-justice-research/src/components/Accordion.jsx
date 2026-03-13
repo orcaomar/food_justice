@@ -6,10 +6,15 @@ const Accordion = ({ title, content }) => {
 
   return (
     <div className="accordion-item">
-      <div className="accordion-title" onClick={() => setIsOpen(!isOpen)}>
-        <div>{title}</div>
-        <div>{isOpen ? '-' : '+'}</div>
-      </div>
+      <button
+        type="button"
+        className="accordion-title"
+        onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
+      >
+        <span>{title}</span>
+        <span aria-hidden="true">{isOpen ? '-' : '+'}</span>
+      </button>
       {isOpen && <div className="accordion-content">{content}</div>}
     </div>
   );
