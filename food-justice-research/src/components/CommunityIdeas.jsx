@@ -43,7 +43,13 @@ const CommunityIdeas = () => {
             <p style={{ fontSize: '18px', fontFamily: 'Inter Tight, sans-serif', textAlign: 'center', marginBottom: '40px' }}>{section.description}</p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'center' }}>
               {section.cards.map((card, cardIndex) => (
-                <div key={cardIndex} style={{ flex: '1 0 300px', maxWidth: '320px', cursor: 'pointer' }} onClick={() => openOverlay(card)}>
+                <button
+                  key={cardIndex}
+                  className="idea-card-button"
+                  style={{ flex: '1 0 300px', maxWidth: '320px', cursor: 'pointer' }}
+                  onClick={() => openOverlay(card)}
+                  aria-label={`Open details for ${card.title}`}
+                >
                   <div className="idea-card">
                     <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
                       <ResponsiveImage src={ideaImage} alt="" style={{ width: '60px', height: '60px', borderRadius: '50%' }} />
@@ -55,7 +61,7 @@ const CommunityIdeas = () => {
                       {card.text}
                     </p>
                   </div>
-                </div>
+                </button>
               ))}
             </div>
           </div>
