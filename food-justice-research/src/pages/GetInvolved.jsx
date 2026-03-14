@@ -26,7 +26,7 @@ const GetInvolved = () => {
 
       <section className="interactive-map">
         <h2>{getInvolvedData.interactiveMap.title}</h2>
-        <iframe src={getInvolvedData.interactiveMap.mapUrl} width="800" height="600"></iframe>
+        <iframe src={getInvolvedData.interactiveMap.mapUrl} width="800" height="600" sandbox="allow-scripts allow-same-origin"></iframe>
         <a href={getInvolvedData.interactiveMap.buttonUrl} target="_blank" rel="noopener noreferrer">
           <button>{getInvolvedData.interactiveMap.buttonText}</button>
         </a>

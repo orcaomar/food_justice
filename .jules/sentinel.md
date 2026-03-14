@@ -17,3 +17,8 @@
 **Vulnerability:** Nginx configuration does not set basic security headers such as X-Content-Type-Options, X-Frame-Options, or Content-Security-Policy.
 **Learning:** This exposes the application to attacks like Clickjacking and MIME sniffing.
 **Prevention:** Add appropriate security headers to the Nginx configuration to enhance defense in depth.
+
+## 2024-05-24 - Missing sandbox attribute on iframe map
+**Vulnerability:** Interactive maps embedded via `<iframe>` in `GetInvolved.jsx` were missing the `sandbox` attribute.
+**Learning:** External content loaded without sandboxing can execute arbitrary scripts with the full privileges of the hosting application, posing an XSS risk.
+**Prevention:** Always apply the `sandbox` attribute (e.g., `sandbox="allow-scripts allow-same-origin"`) to `<iframe>` tags embedding external interactive content to restrict its capabilities.
