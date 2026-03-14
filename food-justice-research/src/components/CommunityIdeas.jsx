@@ -29,6 +29,8 @@ const CommunityIdeas = () => {
           src={headerBackground}
           alt="Community gathering"
           className="masthead-image"
+          loading="eager"
+          fetchPriority="high"
         />
         <div className="masthead-overlay">
           <h1>{communityIdeas.header.title}</h1>
