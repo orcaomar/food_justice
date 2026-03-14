@@ -122,6 +122,8 @@ const ChallengePage = ({ data }) => {
         src={image}
         alt={title}
         className="main-image"
+        loading="eager"
+        fetchPriority="high"
       />
       <p className="summary">{subTitle}</p>
 
