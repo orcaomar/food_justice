@@ -10,6 +10,7 @@ const Footer = () => {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -24,16 +25,21 @@ const Footer = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch('https://submit-form.com/vj5Mry2QV', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
-    setFormData({ name: '', email: '', message: '' });
-    setSubmitted(true);
+    setIsSubmitting(true);
+    try {
+      await fetch('https://submit-form.com/vj5Mry2QV', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      setFormData({ name: '', email: '', message: '' });
+      setSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -66,24 +72,32 @@ const Footer = () => {
                 <input
                   type="text"
                   name="name"
+                  aria-label="Your name"
                   placeholder="Your name"
                   value={formData.name}
                   onChange={handleChange}
+                  required
                 />
                 <input
                   type="email"
                   name="email"
+                  aria-label="Your email"
                   placeholder="Your email"
                   value={formData.email}
                   onChange={handleChange}
+                  required
                 />
                 <textarea
                   name="message"
+                  aria-label="Your message"
                   placeholder="Your message"
                   value={formData.message}
                   onChange={handleChange}
+                  required
                 ></textarea>
-                <button type="submit">Send</button>
+                <button type="submit" disabled={isSubmitting} aria-busy={isSubmitting}>
+                  {isSubmitting ? 'Sending...' : 'Send'}
+                </button>
               </form>
             )}
           </div>
