@@ -9,10 +9,13 @@ const GetInvolved = () => {
   return (
     <div className="get-involved">
       <div className="masthead">
+        {/* ⚡ Bolt: LCP Optimization - Load above-the-fold masthead eagerly with high priority to improve LCP */}
         <ResponsiveImage
           src={getInvolvedData.masthead.backgroundImage}
           alt="People working in a community garden"
           className="masthead-image"
+          loading="eager"
+          fetchpriority="high"
         />
         <div className="masthead-overlay">
           <h1>{getInvolvedData.masthead.title}</h1>
