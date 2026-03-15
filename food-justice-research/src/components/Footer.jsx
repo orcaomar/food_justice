@@ -24,16 +24,26 @@ const Footer = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch('https://submit-form.com/vj5Mry2QV', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
-    setFormData({ name: '', email: '', message: '' });
-    setSubmitted(true);
+    try {
+      const response = await fetch('https://submit-form.com/vj5Mry2QV', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        setFormData({ name: '', email: '', message: '' });
+        setSubmitted(true);
+      } else {
+        // Secure error handling: do not expose underlying error details
+        console.error('Form submission failed');
+      }
+    } catch (error) {
+      // Secure error handling: do not expose stack traces or internal details
+      console.error('Network error occurred during submission');
+    }
   };
 
   return (
@@ -69,6 +79,8 @@ const Footer = () => {
                   placeholder="Your name"
                   value={formData.name}
                   onChange={handleChange}
+                  required
+                  maxLength="100"
                 />
                 <input
                   type="email"
@@ -76,12 +88,16 @@ const Footer = () => {
                   placeholder="Your email"
                   value={formData.email}
                   onChange={handleChange}
+                  required
+                  maxLength="150"
                 />
                 <textarea
                   name="message"
                   placeholder="Your message"
                   value={formData.message}
                   onChange={handleChange}
+                  required
+                  maxLength="2000"
                 ></textarea>
                 <button type="submit">Send</button>
               </form>
