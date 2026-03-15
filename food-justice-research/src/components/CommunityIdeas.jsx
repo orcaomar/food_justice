@@ -25,12 +25,13 @@ const CommunityIdeas = () => {
   return (
     <div className="community-ideas">
       <div className="masthead">
+        {/* ⚡ Bolt: LCP Optimization - Load above-the-fold masthead eagerly with high priority to improve LCP */}
         <ResponsiveImage
           src={headerBackground}
           alt="Community gathering"
           className="masthead-image"
           loading="eager"
-          fetchPriority="high"
+          fetchpriority="high"
         />
         <div className="masthead-overlay">
           <h1>{communityIdeas.header.title}</h1>

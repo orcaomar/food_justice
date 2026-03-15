@@ -118,12 +118,13 @@ const ChallengePage = ({ data }) => {
   return (
     <div className="challenge-page">
       <h1>{title}</h1>
+      {/* ⚡ Bolt: LCP Optimization - Load above-the-fold main image eagerly with high priority to improve LCP */}
       <ResponsiveImage
         src={image}
         alt={title}
         className="main-image"
         loading="eager"
-        fetchPriority="high"
+        fetchpriority="high"
       />
       <p className="summary">{subTitle}</p>
 
