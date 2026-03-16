@@ -77,6 +77,7 @@ const Footer = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  maxLength="100"
                 />
                 <input
                   type="email"
@@ -86,6 +87,7 @@ const Footer = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  maxLength="254"
                 />
                 <textarea
                   name="message"
@@ -94,6 +96,7 @@ const Footer = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  maxLength="2000"
                 ></textarea>
                 <button type="submit" disabled={isSubmitting} aria-busy={isSubmitting}>
                   {isSubmitting ? 'Sending...' : 'Send'}
