@@ -22,3 +22,7 @@
 **Vulnerability:** Interactive maps embedded via `<iframe>` in `GetInvolved.jsx` were missing the `sandbox` attribute.
 **Learning:** External content loaded without sandboxing can execute arbitrary scripts with the full privileges of the hosting application, posing an XSS risk.
 **Prevention:** Always apply the `sandbox` attribute (e.g., `sandbox="allow-scripts allow-same-origin"`) to `<iframe>` tags embedding external interactive content to restrict its capabilities.
+## 2024-05-25 - [Add Input Length Limits]
+**Vulnerability:** The contact form submitted data directly to an external service (submit-form.com) without backend rate limiting or CAPTCHA, making it vulnerable to Denial of Service (DoS) attacks via sending excessively large payloads in the form inputs.
+**Learning:** In a heavily decoupled frontend architecture like this (fetching directly to a third-party form handler), standard server-side protections are missing, placing more responsibility on the frontend to implement defense-in-depth measures like payload size restriction.
+**Prevention:** Implement `maxLength` attributes on all form input elements to enforce client-side constraints on data size before submission.
