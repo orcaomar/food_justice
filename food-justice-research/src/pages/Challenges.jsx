@@ -11,7 +11,15 @@ const Challenges = () => {
 
   return (
     <section className="challenges-page">
-      <div className="masthead" style={{ backgroundImage: `url(${headerBackground})` }}>
+      <div className="masthead">
+        {/* ⚡ Bolt: LCP Optimization - Load above-the-fold masthead eagerly with high priority to improve LCP */}
+        <ResponsiveImage
+          src={headerBackground}
+          alt="Challenges masthead"
+          className="masthead-image"
+          loading="eager"
+          fetchpriority="high"
+        />
         <div className="masthead-overlay">
           <h1>Challenges</h1>
           <p>
