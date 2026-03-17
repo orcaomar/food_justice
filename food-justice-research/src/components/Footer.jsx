@@ -69,6 +69,7 @@ const Footer = () => {
               <div>Message submitted.</div>
             ) : (
               <form onSubmit={handleSubmit}>
+                {/* 🛡️ Sentinel: Enforce input length limits to prevent oversized payload DoS */}
                 <input
                   type="text"
                   name="name"
@@ -77,6 +78,7 @@ const Footer = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  maxLength="100"
                 />
                 <input
                   type="email"
@@ -86,6 +88,7 @@ const Footer = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  maxLength="150"
                 />
                 <textarea
                   name="message"
@@ -94,6 +97,7 @@ const Footer = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  maxLength="1000"
                 ></textarea>
                 <button type="submit" disabled={isSubmitting} aria-busy={isSubmitting}>
                   {isSubmitting ? 'Sending...' : 'Send'}
