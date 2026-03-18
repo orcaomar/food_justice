@@ -35,14 +35,22 @@ const ChallengePage = ({ data }) => {
   }, [title]);
 
   useEffect(() => {
+    // ⚡ Bolt: Use a hybrid approach for optimal scroll-based scaling animations.
+    // 1. IntersectionObserver tracks visibility to filter active sections.
+    // 2. A passive scroll listener handles smooth updates only for visible elements.
+    // This avoids expensive getBoundingClientRect() calls for off-screen sections,
+    // reducing layout overhead and main thread work during scroll.
+
+    const visibleSections = new Set();
     let ticking = false;
 
     const updateTransforms = () => {
       const viewportHeight = window.innerHeight;
       const sectionUpdates = [];
 
-      // READ phase: Get all bounding boxes without writing to the DOM
-      sectionRefs.current.forEach((section, index) => {
+      // READ phase: Batch getBoundingClientRect() calls for visible sections
+      visibleSections.forEach(index => {
+        const section = sectionRefs.current[index];
         if (section) {
           const { top } = section.getBoundingClientRect();
           const positionInViewport = top / viewportHeight;
@@ -51,20 +59,15 @@ const ChallengePage = ({ data }) => {
           const scrollProgress = 1 - positionInViewport;
 
           let scale;
-
           if (scrollProgress <= ZOOM_START_THRESHOLD) {
-            // Below the zoom zone, stay at min scale
             scale = MIN_SCALE;
           } else if (scrollProgress >= ZOOM_END_THRESHOLD) {
-            // Above the zoom zone, stay at max scale
             scale = MAX_SCALE;
           } else {
-            // Inside the zoom zone, calculate scale linearly
             const progressInZoomZone = (scrollProgress - ZOOM_START_THRESHOLD) / (ZOOM_END_THRESHOLD - ZOOM_START_THRESHOLD);
             scale = MIN_SCALE + (MAX_SCALE - MIN_SCALE) * progressInZoomZone;
           }
 
-          // Clamp the scale just in case
           const clampedScale = Math.max(MIN_SCALE, Math.min(MAX_SCALE, scale));
           sectionUpdates.push({ section, clampedScale });
         }
@@ -85,12 +88,36 @@ const ChallengePage = ({ data }) => {
       }
     };
 
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const index = sectionRefs.current.indexOf(entry.target);
+        if (entry.isIntersecting) {
+          visibleSections.add(index);
+        } else {
+          visibleSections.delete(index);
+          // Optimization: Reset transform for off-screen elements
+          entry.target.style.transform = `scale(${MIN_SCALE})`;
+        }
+      });
+      // Initial update when things enter/leave
+      handleScroll();
+    }, {
+      // Observe with a margin so we start animating just before they enter
+      rootMargin: '100px 0px 100px 0px',
+      threshold: 0
+    });
+
+    sectionRefs.current.forEach(section => {
+      if (section) observer.observe(section);
+    });
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    updateTransforms(); // Run on initial load
+    handleScroll(); // Run on initial load
 
     return () => {
+      observer.disconnect();
       window.removeEventListener('scroll', handleScroll);
-      ticking = false; // Reset ticking flag on unmount
+      ticking = false;
     };
   }, []); // Empty dependency array ensures this runs only once on mount
 
