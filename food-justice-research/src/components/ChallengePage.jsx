@@ -147,7 +147,7 @@ const ChallengePage = ({ data }) => {
               {section.title && <h2>{section.title}</h2>}
               {renderSectionContent(section)}
               {section.audio && (
-                <button className="hear-story-button" onClick={() => openOverlay(section)}>
+                <button className="hear-story-button" onClick={() => openOverlay(section)} aria-label={`Hear story about ${section.title || title}`}>
                   Hear Story
                 </button>
               )}
