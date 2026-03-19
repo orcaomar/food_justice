@@ -7,3 +7,7 @@
 ## 2025-03-14 - Prevent Delayed LCP for Above-the-Fold Responsive Images
 **Learning:** The `ResponsiveImage` component defaults to `loading="lazy"` when provided an array of sources (e.g., from `vite-imagetools`). When used for critical above-the-fold images like hero sections or mastheads (e.g., `ChallengePage` and `CommunityIdeas`), this default behavior delays the Largest Contentful Paint (LCP). React props spreading `{...props}` applied after `loading="lazy"` can successfully override the lazy loading, but React requires the DOM attribute to be lowercase `fetchpriority` instead of `fetchPriority`.
 **Action:** Always verify that above-the-fold images explicitly receive `loading="eager"` and `fetchpriority="high"` props when using the `ResponsiveImage` component to override its lazy-loading default.
+
+## 2025-03-14 - Preventing LCP delays with ResponsiveImage
+**Learning:** When optimizing above-the-fold images (like mastheads) in this repository by replacing CSS `background-image` with the HTML `<ResponsiveImage>` component to improve Largest Contentful Paint (LCP), always explicitly import `ResponsiveImage` in the file. React's JSX transpilation will throw a fatal `ReferenceError` at runtime if the custom component is not imported, even though standard HTML tags don't require imports.
+**Action:** When introducing a new component like `ResponsiveImage` into a React file, explicitly verify its import statement is present before committing to prevent runtime crashes.
