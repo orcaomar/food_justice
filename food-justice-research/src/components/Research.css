@@ -4,12 +4,45 @@
   line-height: 1.6;
 }
 
-.research-header {
-  background-size: cover;
-  background-position: center;
+.research-container .masthead {
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
-  padding: 4rem 2rem;
   text-align: center;
+}
+
+.research-container .masthead-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.research-container .masthead-overlay {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  max-width: 800px;
+}
+
+.research-container .masthead h1 {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 77px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.research-container .masthead p {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 18px;
+  color: #fff;
 }
 
 .what-we-learned, .testimonials, .project-goals, .action-plan, .research-methods, .team-members, .research-report {

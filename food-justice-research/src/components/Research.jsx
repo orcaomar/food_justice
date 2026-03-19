@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 import './Research.css';
-import headerBg from '../assets/research/DQaUHWzldUNQUDV8Bk1igtA3s.jpg';
+import headerBg from '../assets/research/DQaUHWzldUNQUDV8Bk1igtA3s.jpg?w=400;800;1200&format=webp;jpg&srcset';
 import projectGoalsImg from '../assets/research/cjRR1Ssh7HNarcSqiHBa4XK6Us.jpg?w=400;800;1200&format=webp;jpg&srcset';
 import actionPlanImg from '../assets/research/ZmnNohA0Ep8HWcizFZaeBOYFHg.jpg?w=400;800;1200&format=webp;jpg&srcset';
 import luannImg from '../assets/research/iEPxox514vmq2re5m1VYua1nYY.jpeg?w=200;400;600&format=webp;jpeg&srcset';
@@ -15,8 +15,16 @@ const Research = () => {
   useDocumentTitle('Research | Flemingdon & Thorncliffe Food Justice | Toronto, Canada');
   return (
     <div className="research-container">
-      <div className="masthead" style={{ backgroundImage: `url(${headerBg})` }}>
-        <div style={{ textAlign: 'center' }}>
+      <div className="masthead">
+        {/* ⚡ Bolt: LCP Optimization - Load above-the-fold main image eagerly with high priority to improve LCP */}
+        <ResponsiveImage
+          src={headerBg}
+          alt="Our Research masthead"
+          className="masthead-image"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div className="masthead-overlay" style={{ textAlign: 'center' }}>
           <h1>Our Research</h1>
           <p>This research – past and present – belongs to the community. We designed our research methods and questions to address research needs identified by residents and workers.</p>
         </div>
