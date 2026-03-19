@@ -26,3 +26,7 @@
 **Vulnerability:** The contact form submitted data directly to an external service (submit-form.com) without backend rate limiting or CAPTCHA, making it vulnerable to Denial of Service (DoS) attacks via sending excessively large payloads in the form inputs.
 **Learning:** In a heavily decoupled frontend architecture like this (fetching directly to a third-party form handler), standard server-side protections are missing, placing more responsibility on the frontend to implement defense-in-depth measures like payload size restriction.
 **Prevention:** Implement `maxLength` attributes on all form input elements to enforce client-side constraints on data size before submission.
+## 2024-05-25 - [Add Content Security Policy]
+**Vulnerability:** The application was missing a Content-Security-Policy (CSP) header in its Nginx configuration, leaving it vulnerable to Cross-Site Scripting (XSS) and data injection attacks if other defenses (like DOMPurify) failed.
+**Learning:** Even static SPA applications that rely on third-party services (like Google Analytics, Google Maps, and external form handlers) need a strict CSP to restrict the sources of executable scripts, stylesheets, and connections to known-good domains. This is a crucial layer of defense in depth.
+**Prevention:** Always configure a comprehensive `Content-Security-Policy` header in the production web server (e.g., Nginx) that explicitly whitelists trusted domains for `script-src`, `connect-src`, `frame-src`, and other relevant directives.
