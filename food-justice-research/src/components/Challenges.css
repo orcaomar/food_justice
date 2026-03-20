@@ -96,3 +96,10 @@
 .next-button {
   right: 10px;
 }
+
+.prev-button:focus-visible,
+.next-button:focus-visible,
+.learn-more-button:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 4px;
+}
