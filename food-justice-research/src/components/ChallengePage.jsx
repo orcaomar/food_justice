@@ -15,6 +15,12 @@ const MAX_SCALE = 1.0; // The largest the section will be (full size)
 const ZOOM_START_THRESHOLD = 0.1;
 const ZOOM_END_THRESHOLD = 0.8;
 
+// 🛡️ Sentinel: Mitigate reverse tabnabbing and allow target="_blank"
+DOMPurify.addHook('afterSanitizeAttributes', function (node) {
+  if (node.tagName === 'A' && node.getAttribute('target') === '_blank') {
+    node.setAttribute('rel', 'noopener noreferrer');
+  }
+});
 
 const ChallengePage = ({ data }) => {
   const { title, image, subTitle, sections } = data;
@@ -134,10 +140,11 @@ const ChallengePage = ({ data }) => {
         ></iframe>
       );
     }
+
     return (
       <p
         style={{ whiteSpace: 'pre-wrap' }}
-        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(section.text) }}
+        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(section.text, { ADD_ATTR: ['target'] }) }}
       />
     );
   };
