@@ -26,3 +26,8 @@
   padding-top: 1rem;
   border-top: 1px solid #ddd;
 }
+
+.accordion-title:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 4px;
+}

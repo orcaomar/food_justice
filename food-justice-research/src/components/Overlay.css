@@ -31,3 +31,8 @@
   font-size: 24px;
   cursor: pointer;
 }
+
+.close-button:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 4px;
+}

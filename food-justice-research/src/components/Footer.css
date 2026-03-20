@@ -137,3 +137,12 @@ footer {
     justify-content: center;
   }
 }
+
+.back-to-top:focus-visible,
+.footer-column input:focus-visible,
+.footer-column textarea:focus-visible,
+.footer-column button:focus-visible,
+.footer-column a:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 4px;
+}
