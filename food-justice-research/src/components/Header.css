@@ -33,6 +33,12 @@ nav a:hover {
   color: #862b0d;
 }
 
+nav a:focus-visible,
+.logo-container a:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 4px;
+}
+
 @media (max-width: 768px) {
   header {
     flex-direction: column;

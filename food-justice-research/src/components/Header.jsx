@@ -6,11 +6,11 @@ const Header = () => {
   return (
     <header>
       <div className="logo-container">
-        <Link to="/">
+        <Link to="/" aria-label="Home">
           <Logo />
         </Link>
       </div>
-      <nav>
+      <nav aria-label="Main navigation">
         <ul>
           <li><Link to="/research">Research</Link></li>
           <li><Link to="/challenges">Challenges</Link></li>
