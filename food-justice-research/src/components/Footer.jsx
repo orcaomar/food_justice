@@ -11,6 +11,7 @@ const Footer = () => {
   });
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -26,8 +27,9 @@ const Footer = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError('');
     try {
-      await fetch('https://submit-form.com/vj5Mry2QV', {
+      const response = await fetch('https://submit-form.com/vj5Mry2QV', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -35,8 +37,15 @@ const Footer = () => {
         },
         body: JSON.stringify(formData),
       });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
       setFormData({ name: '', email: '', message: '' });
       setSubmitted(true);
+    } catch (error) {
+      setSubmitError('An error occurred while submitting your message. Please try again later.');
     } finally {
       setIsSubmitting(false);
     }
@@ -69,6 +78,7 @@ const Footer = () => {
               <div>Message submitted.</div>
             ) : (
               <form onSubmit={handleSubmit}>
+                {submitError && <div className="error-message" style={{ color: '#d32f2f', marginBottom: '10px' }}>{submitError}</div>}
                 {/* 🛡️ Sentinel: Enforce input length limits to prevent oversized payload DoS */}
                 <input
                   type="text"

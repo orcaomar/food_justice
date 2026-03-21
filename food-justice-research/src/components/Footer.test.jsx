@@ -6,6 +6,7 @@ import Footer from './Footer';
 // Mock the global fetch API to simulate a successful form submission
 global.fetch = vi.fn(() =>
   Promise.resolve({
+    ok: true,
     json: () => Promise.resolve({ success: true }),
   })
 );
@@ -16,6 +17,7 @@ describe('Footer', () => {
   beforeEach(() => {
     originalFetch = global.fetch;
     global.fetch = vi.fn(() => Promise.resolve({
+      ok: true,
       json: () => Promise.resolve({})
     }));
   });

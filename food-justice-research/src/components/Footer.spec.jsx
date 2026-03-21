@@ -9,6 +9,7 @@ describe('Footer', () => {
   beforeEach(() => {
     originalFetch = global.fetch;
     global.fetch = vi.fn(() => Promise.resolve({
+      ok: true,
       json: () => Promise.resolve({})
     }));
   });
