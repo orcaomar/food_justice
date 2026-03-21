@@ -4,6 +4,7 @@ import challenges from '../data/ChallengesData';
 import './Challenges.css';
 import ResponsiveImage from '../components/ResponsiveImage';
 import headerBackground from '../assets/challenges/Rpn5t3gee6lAsbzLDCUvpXmQvkY.png';
+
 const Challenges = () => {
   useEffect(() => {
     document.title = 'Challenges | Flemingdon & Thorncliffe Food Justice | Toronto, Canada';
