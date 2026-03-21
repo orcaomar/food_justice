@@ -11,3 +11,7 @@
 ## 2025-03-14 - Preventing LCP delays with ResponsiveImage
 **Learning:** When optimizing above-the-fold images (like mastheads) in this repository by replacing CSS `background-image` with the HTML `<ResponsiveImage>` component to improve Largest Contentful Paint (LCP), always explicitly import `ResponsiveImage` in the file. React's JSX transpilation will throw a fatal `ReferenceError` at runtime if the custom component is not imported, even though standard HTML tags don't require imports.
 **Action:** When introducing a new component like `ResponsiveImage` into a React file, explicitly verify its import statement is present before committing to prevent runtime crashes.
+
+## 2025-03-21 - Defer Loading of Interactive Iframes
+**Learning:** Interactive embedded resources, like Google Maps inside `<iframe>` tags in components such as `ChallengePage.jsx` and `GetInvolved.jsx`, block the main thread and consume significant bandwidth during initial page load, degrading Largest Contentful Paint (LCP) and Time to Interactive (TTI) metrics.
+**Action:** Consistently apply the `loading="lazy"` attribute to off-screen `<iframe>` tags. This ensures modern browsers defer downloading these heavy assets until the user scrolls near them, providing an immediate boost to perceived and actual initial load performance without architectural changes.

@@ -137,6 +137,7 @@ const ChallengePage = ({ data }) => {
           src={section.mapUrl}
           title={`${section.title} map`}
           sandbox="allow-scripts allow-same-origin"
+          loading="lazy"
         ></iframe>
       );
     }
