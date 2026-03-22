@@ -6,3 +6,7 @@
 ## 2024-05-16 - [Added ARIA and Keyboard Support to Custom Overlay Modal]
 **Learning:** Found that the custom `<Overlay>` component was missing standard modal accessibility features. It lacked a `role="dialog"`, `aria-modal="true"`, and wasn't labeled by its title. Furthermore, keyboard users couldn't dismiss it using the `Escape` key, a fundamental expectation for modals.
 **Action:** When building or modifying custom modals/overlays, ensure they include an `Escape` keydown listener on the document for keyboard accessibility. Always add `role="dialog"`, `aria-modal="true"`, and an `aria-labelledby` attribute (pointing to the modal's title ID) to properly convey the modal context and its purpose to screen readers.
+## 2026-03-22 - Nested Button Accessibility
+
+**Learning:** When styling links (`<a>`) to look like buttons, developers in this app sometimes invalidly nest a `<button>` inside the `<a>` tag to inherit button styles. This causes accessibility issues for screen readers.
+**Action:** Use a semantic `<a>` tag with a dedicated class (e.g., `.map-button`) and apply button-like CSS directly to the anchor, ensuring it retains `display: inline-block`, `text-decoration: none`, and proper `:focus-visible` styling for keyboard navigation.
