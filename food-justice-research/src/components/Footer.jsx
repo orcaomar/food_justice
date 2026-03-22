@@ -28,6 +28,11 @@ const Footer = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitError('');
+
+    // 🛡️ Sentinel: Add timeout to external API calls to prevent hanging requests
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 8000); // 8-second timeout
+
     try {
       const response = await fetch('https://submit-form.com/vj5Mry2QV', {
         method: 'POST',
@@ -36,7 +41,10 @@ const Footer = () => {
           Accept: 'application/json',
         },
         body: JSON.stringify(formData),
+        signal: controller.signal,
       });
+
+      clearTimeout(timeoutId);
 
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -45,7 +53,12 @@ const Footer = () => {
       setFormData({ name: '', email: '', message: '' });
       setSubmitted(true);
     } catch (error) {
-      setSubmitError('An error occurred while submitting your message. Please try again later.');
+      clearTimeout(timeoutId);
+      if (error.name === 'AbortError') {
+        setSubmitError('The request timed out. Please try again later.');
+      } else {
+        setSubmitError('An error occurred while submitting your message. Please try again later.');
+      }
     } finally {
       setIsSubmitting(false);
     }

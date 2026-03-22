@@ -22,15 +22,23 @@
 **Vulnerability:** Interactive maps embedded via `<iframe>` in `GetInvolved.jsx` were missing the `sandbox` attribute.
 **Learning:** External content loaded without sandboxing can execute arbitrary scripts with the full privileges of the hosting application, posing an XSS risk.
 **Prevention:** Always apply the `sandbox` attribute (e.g., `sandbox="allow-scripts allow-same-origin"`) to `<iframe>` tags embedding external interactive content to restrict its capabilities.
+
 ## 2024-05-25 - [Add Input Length Limits]
 **Vulnerability:** The contact form submitted data directly to an external service (submit-form.com) without backend rate limiting or CAPTCHA, making it vulnerable to Denial of Service (DoS) attacks via sending excessively large payloads in the form inputs.
 **Learning:** In a heavily decoupled frontend architecture like this (fetching directly to a third-party form handler), standard server-side protections are missing, placing more responsibility on the frontend to implement defense-in-depth measures like payload size restriction.
 **Prevention:** Implement `maxLength` attributes on all form input elements to enforce client-side constraints on data size before submission.
+
 ## 2024-05-25 - [Add Content Security Policy]
 **Vulnerability:** The application was missing a Content-Security-Policy (CSP) header in its Nginx configuration, leaving it vulnerable to Cross-Site Scripting (XSS) and data injection attacks if other defenses (like DOMPurify) failed.
 **Learning:** Even static SPA applications that rely on third-party services (like Google Analytics, Google Maps, and external form handlers) need a strict CSP to restrict the sources of executable scripts, stylesheets, and connections to known-good domains. This is a crucial layer of defense in depth.
 **Prevention:** Always configure a comprehensive `Content-Security-Policy` header in the production web server (e.g., Nginx) that explicitly whitelists trusted domains for `script-src`, `connect-src`, `frame-src`, and other relevant directives.
+
 ## 2024-05-24 - Add rel="noopener noreferrer" for DOMPurify target="_blank"
 **Vulnerability:** Reverse Tabnabbing (Medium/High severity). External links rendered via `DOMPurify` with `target="_blank"` did not have `rel="noopener noreferrer"`, exposing the application to reverse tabnabbing attacks where the newly opened tab could manipulate the `window.opener` object to redirect the parent page to a malicious site.
 **Learning:** `DOMPurify` strips `target="_blank"` by default unless explicitly configured via `{ ADD_ATTR: ['target'] }`. However, allowing `target` does not automatically add the necessary `rel="noopener noreferrer"` attributes. The vulnerability existed because the data rendered dynamically contained `target="_blank"` without the corresponding `rel` attributes, and `DOMPurify` merely sanitized the HTML without enforcing safe link handling.
 **Prevention:** When using `DOMPurify` to allow `target="_blank"` links, always utilize a `DOMPurify.addHook('afterSanitizeAttributes', ...)` hook to programmatically enforce `rel="noopener noreferrer"` on all anchor (`<a>`) tags that have a `target="_blank"` attribute, preventing reliance on data authors to include it manually.
+
+## 2024-05-26 - [Add timeout to external API calls]
+**Vulnerability:** The contact form submission in `Footer.jsx` lacked a timeout on its `fetch` request to the external service (`submit-form.com`), which could result in hanging requests indefinitely if the third-party service experienced downtime or network issues, potentially leading to resource exhaustion or a poor user experience.
+**Learning:** Relying on default browser timeouts for network requests (which can be several minutes) is insufficient for ensuring a robust and responsive application, especially when integrating with decoupled third-party services.
+**Prevention:** Always implement an `AbortController` with a reasonable timeout duration (e.g., 8 seconds) for external `fetch` calls, ensuring that the application fails securely and provides timely feedback to the user when a service is unreachable.
