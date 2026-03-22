@@ -11,7 +11,16 @@ import React from 'react';
 const ResponsiveImage = ({ src, alt, ...props }) => {
   // If src is just a string (e.g. for SVGs or non-optimized images), render a regular img tag.
   if (typeof src === 'string') {
-    return <img src={src} alt={alt} {...props} />;
+    return (
+      <img
+        src={src}
+        alt={alt}
+        /* ⚡ Bolt: LCP Optimization - Add lazy loading and async decoding by default to non-optimized images */
+        loading="lazy"
+        decoding="async"
+        {...props}
+      />
+    );
   }
 
   // If src is an array from vite-imagetools, construct the srcset string.
