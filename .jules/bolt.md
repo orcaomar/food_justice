@@ -15,3 +15,7 @@
 ## 2025-03-21 - Defer Loading of Interactive Iframes
 **Learning:** Interactive embedded resources, like Google Maps inside `<iframe>` tags in components such as `ChallengePage.jsx` and `GetInvolved.jsx`, block the main thread and consume significant bandwidth during initial page load, degrading Largest Contentful Paint (LCP) and Time to Interactive (TTI) metrics.
 **Action:** Consistently apply the `loading="lazy"` attribute to off-screen `<iframe>` tags. This ensures modern browsers defer downloading these heavy assets until the user scrolls near them, providing an immediate boost to perceived and actual initial load performance without architectural changes.
+
+## 2025-03-23 - Optimize ResearchPartners Image Assets
+**Learning:** The `ResearchPartners.jsx` component rendered several large `.png` assets using simple `<img>` tags, resulting in poor image delivery and large, unoptimized network payloads. By converting these imports to leverage `vite-imagetools` parameters (`?w=...&format=webp;png&srcset`) and rendering them with the project's `<ResponsiveImage>` component, we significantly reduced the initial payload size and enabled automatic WebP generation alongside lazy loading.
+**Action:** Always scrutinize static image imports (like `.png` or `.jpg` imports without query strings) and standard `<img>` tags in React components. If `vite-imagetools` and a custom `<ResponsiveImage>` component exist in the codebase, proactively use them to generate responsive, modern image formats, ensuring comments explain the LCP/bundle size impact.
