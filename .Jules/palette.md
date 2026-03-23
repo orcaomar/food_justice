@@ -10,3 +10,7 @@
 
 **Learning:** When styling links (`<a>`) to look like buttons, developers in this app sometimes invalidly nest a `<button>` inside the `<a>` tag to inherit button styles. This causes accessibility issues for screen readers.
 **Action:** Use a semantic `<a>` tag with a dedicated class (e.g., `.map-button`) and apply button-like CSS directly to the anchor, ensuring it retains `display: inline-block`, `text-decoration: none`, and proper `:focus-visible` styling for keyboard navigation.
+
+## 2024-05-18 - [Interactive Component Hover vs Focus Delegation]
+**Learning:** Found an accessibility issue pattern specific to this app's component structure where interactive "cards" (like the Idea Cards in CommunityIdeas) have a visually cohesive design but the semantic interactive element (a `<button>`) is nested inside the card container. When applying `hover` transitions to the outer `.idea-card`, those visual states do not trigger when a keyboard user tabs to focus the inner `<button>`, creating an inconsistent experience.
+**Action:** When adding hover transitions to container elements that wrap semantic interactive children, use the `:has()` selector (e.g., `.idea-card:has(.idea-card-button:focus-visible)`) to delegate the focus state of the inner child to trigger the visual styling of the parent container, ensuring visual parity between mouse hover and keyboard focus interactions.
