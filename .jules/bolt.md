@@ -1,7 +1,5 @@
 ## 2025-02-13 - Code Splitting Above-the-Fold Content
-
 **Learning:** When implementing React code splitting, lazy-loading above-the-fold components (like `Hero`, `Quotes`, `OurResearch`) on the main index route is a performance anti-pattern. This approach forces the browser to wait for an additional network request before rendering the main view, delaying the initial paint and actively degrading the Largest Contentful Paint (LCP) metric.
-
 **Action:** Keep critical above-the-fold components synchronous for faster initial load. Only use `React.lazy()` for non-initial route code splitting or heavy, below-the-fold components to effectively reduce the initial bundle size without sacrificing perceived performance. Ensure temporary workspace artifacts (like `.bak` or log files) are deleted before submission.
 
 ## 2025-03-14 - Prevent Delayed LCP for Above-the-Fold Responsive Images
@@ -19,3 +17,7 @@
 ## 2025-03-23 - Optimize ResearchPartners Image Assets
 **Learning:** The `ResearchPartners.jsx` component rendered several large `.png` assets using simple `<img>` tags, resulting in poor image delivery and large, unoptimized network payloads. By converting these imports to leverage `vite-imagetools` parameters (`?w=...&format=webp;png&srcset`) and rendering them with the project's `<ResponsiveImage>` component, we significantly reduced the initial payload size and enabled automatic WebP generation alongside lazy loading.
 **Action:** Always scrutinize static image imports (like `.png` or `.jpg` imports without query strings) and standard `<img>` tags in React components. If `vite-imagetools` and a custom `<ResponsiveImage>` component exist in the codebase, proactively use them to generate responsive, modern image formats, ensuring comments explain the LCP/bundle size impact.
+
+## 2025-03-24 - Memoizing List Renders in Carousels
+**Learning:** In interactive components like `Challenges.jsx` where a parent state (`currentIndex`) updates frequently to control visibility (like a carousel translation), re-rendering the mapped array of child elements on every state change forces React to reconcile the entire list. When children contain heavy components like `<ResponsiveImage>`, this causes unnecessary main thread work and drops frames.
+**Action:** Use `useMemo` to cache the array of rendered elements (`renderedSlides`) when the underlying data (`challenges`) is static. This ensures the parent component only triggers CSS translation updates and prevents React from re-rendering the internal dom nodes of the list items on interaction.
