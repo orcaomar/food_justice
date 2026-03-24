@@ -95,3 +95,12 @@
   background-color: #000;
   color: #fff;
 }
+
+.challenge-card:has(.learn-more-button:focus-visible) {
+  outline: 3px solid #005fcc;
+  outline-offset: 4px;
+}
+
+.learn-more-button:focus-visible {
+  outline: none;
+}
