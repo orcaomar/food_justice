@@ -61,6 +61,15 @@
   border-radius: 8px;
 }
 
+.card:has(a:focus-visible) {
+  outline: 3px solid #005fcc;
+  outline-offset: 4px;
+}
+
+.card a:focus-visible {
+  outline: none;
+}
+
 .project-goals, .action-plan {
   display: flex;
   gap: 2rem;
