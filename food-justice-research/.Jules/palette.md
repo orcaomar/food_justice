@@ -1,0 +1,3 @@
+## 2026-03-25 - [Contextual Floating Action Buttons]
+**Learning:** Fixed elements like 'Back to Top' buttons that are always visible add unnecessary clutter and visual noise, especially when users are already at the top of the page. Conditionally rendering them based on scroll depth significantly improves the interface's cleanliness.
+**Action:** Always implement a scroll threshold (e.g., `window.scrollY > 300`) for sticky or fixed elements that only provide value when the user is deep into a page. Ensure smooth CSS transitions (`opacity` and `visibility`) are used instead of abrupt rendering to maintain a polished UX.
