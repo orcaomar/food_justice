@@ -1,0 +1,3 @@
+## 2025-05-18 - Optimize React list re-rendering
+**Learning:** When a parent component renders a large, static mapped list (like `communityIdeas.sections`) and contains a child that toggles local state (like opening an overlay via `selectedCard`), not wrapping the list rendering in `useMemo` causes expensive and unnecessary reconciliation of the entire DOM list on every toggle.
+**Action:** Always wrap the rendering logic of static or mostly-static mapped lists in a `useMemo` block when the parent component has unrelated state changes that would otherwise force a re-render. Make sure to properly wrap functions used in the mapping logic inside `useCallback` and include them in the dependency array to avoid `react-hooks/exhaustive-deps` lint violations.
