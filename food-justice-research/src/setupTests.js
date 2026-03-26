@@ -5,13 +5,13 @@ import * as matchers from '@testing-library/jest-dom/matchers';
 expect.extend(matchers);
 
 // Mock IntersectionObserver which is not available in JSDOM
-// Using vi.fn() as a constructor that returns the mock object
-const IntersectionObserverMock = vi.fn(() => ({
-  disconnect: vi.fn(),
-  observe: vi.fn(),
-  takeRecords: vi.fn(),
-  unobserve: vi.fn(),
-}));
+// Using a traditional function that can be used as a constructor
+const IntersectionObserverMock = vi.fn(function() {
+  this.observe = vi.fn();
+  this.unobserve = vi.fn();
+  this.disconnect = vi.fn();
+  this.takeRecords = vi.fn();
+});
 
 vi.stubGlobal('IntersectionObserver', IntersectionObserverMock);
 
