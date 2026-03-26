@@ -31,15 +31,6 @@ vi.mock('../utils/google-analytics', () => ({
   trackEvent: vi.fn()
 }));
 
-// Mock IntersectionObserver
-const mockIntersectionObserver = vi.fn();
-mockIntersectionObserver.mockReturnValue({
-  observe: vi.fn(),
-  unobserve: vi.fn(),
-  disconnect: vi.fn()
-});
-window.IntersectionObserver = mockIntersectionObserver;
-
 // Mock requestAnimationFrame
 window.requestAnimationFrame = vi.fn((callback) => callback());
 
@@ -140,8 +131,8 @@ describe('ChallengePage Component', () => {
   it('sets default transform scale and observes sections', () => {
     render(<ChallengePage data={mockData} />);
 
-    expect(mockIntersectionObserver).toHaveBeenCalled();
-    const observerInstance = mockIntersectionObserver.mock.results[0].value;
+    expect(window.IntersectionObserver).toHaveBeenCalled();
+    const observerInstance = vi.mocked(window.IntersectionObserver).mock.results[0].value;
     expect(observerInstance.observe).toHaveBeenCalled();
   });
 });
