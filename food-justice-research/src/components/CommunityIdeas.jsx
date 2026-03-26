@@ -58,6 +58,42 @@ const CommunityIdeas = () => {
     ));
   }, [openOverlay]);
 
+  // ⚡ Bolt: Memoize the rendered sections to prevent unnecessary re-renders of the entire
+  // list and its child <ResponsiveImage> components every time `selectedCard` state changes
+  // (e.g., when the user opens or closes the overlay).
+  // This reduces React reconciliation overhead and main thread work.
+  const renderedSections = useMemo(() => {
+    return communityIdeas.sections.map((section, index) => (
+      <div key={index} style={{ marginBottom: '60px' }}>
+        <h2 style={{ fontSize: '36px', fontFamily: 'Urbanist, sans-serif', textAlign: 'center', marginBottom: '20px' }}>{section.title}</h2>
+        <p style={{ fontSize: '18px', fontFamily: 'Inter Tight, sans-serif', textAlign: 'center', marginBottom: '40px' }}>{section.description}</p>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'center' }}>
+          {section.cards.map((card, cardIndex) => (
+            <button
+              key={cardIndex}
+              className="idea-card-button"
+              style={{ flex: '1 0 300px', maxWidth: '320px', cursor: 'pointer' }}
+              onClick={() => openOverlay(card)}
+              aria-label={`Open details for ${card.title}`}
+            >
+              <div className="idea-card">
+                <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
+                  <ResponsiveImage src={ideaImage} alt="" style={{ width: '60px', height: '60px', borderRadius: '50%' }} />
+                  <div style={{ flex: '1 0 0px' }}>
+                    <h3 style={{ fontFamily: 'Urbanist, sans-serif', fontSize: '18px' }}>{card.title}</h3>
+                  </div>
+                </div>
+                <p style={{ fontFamily: 'Inter Tight, sans-serif', fontSize: '18px', marginTop: '20px' }}>
+                  {card.text}
+                </p>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+    ));
+  }, [openOverlay]);
+
   return (
     <div className="community-ideas">
       <div className="masthead">
