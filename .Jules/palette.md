@@ -19,3 +19,8 @@
 **Learning:** When styling interactive cards that wrap semantic interactive children (like a Link inside a heading, or a learn-more button), the default focus outline on the inner element can be visually disjointed or unnoticeable compared to the overall card layout.
 
 **Action:** Use the CSS `:has()` pseudo-class selector (e.g., `.card:has(.button:focus-visible)` or `.card:has(a:focus-visible)`) to delegate the focus state of the inner child to trigger the visual styling of the parent container. Remember to disable the outline on the inner child (e.g., `outline: none`) to prevent double outlines.
+
+## 2024-05-20 - Contextual Rendering of Floating Action Buttons
+
+**Learning:** Found that the "Back to Top" floating action button in the Footer was rendered persistently, even when users were already at the top of the page. This adds unnecessary visual clutter to the initial view and dilutes the button's purpose as a navigational aid.
+**Action:** To reduce visual clutter and improve contextuality, floating action buttons (like "Back to Top") should be dynamically rendered based on scroll depth (e.g., `window.scrollY > 300`). Rather than abruptly rendering the element, visually toggle it using CSS `opacity` and `visibility` transitions for a smoother user experience, while keeping accessibility in mind by conditionally updating `aria-hidden` when the button is inactive.
