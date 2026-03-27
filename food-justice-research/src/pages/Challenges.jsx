@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 import challenges from '../data/ChallengesData';
 import './Challenges.css';
 import ResponsiveImage from '../components/ResponsiveImage';
-import headerBackground from '../assets/challenges/Rpn5t3gee6lAsbzLDCUvpXmQvkY.png';
+// ⚡ Bolt: LCP & Bundle Size Optimization
+// Using vite-imagetools to generate responsive, modern-format (WebP) variants of the static masthead.
+// This replaces a large, static PNG with a responsive srcset to prevent blocking the main thread
+// and consume less bandwidth, significantly improving initial load times.
+import headerBackground from '../assets/challenges/Rpn5t3gee6lAsbzLDCUvpXmQvkY.png?w=400;800;1200&format=webp;png&srcset';
 
 const Challenges = () => {
   useEffect(() => {
