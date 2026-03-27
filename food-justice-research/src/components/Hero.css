@@ -42,3 +42,8 @@
   font-size: 18px;
   font-weight: 600;
 }
+
+.video-button:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 4px;
+}
