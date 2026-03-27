@@ -19,3 +19,7 @@
 **Learning:** When styling interactive cards that wrap semantic interactive children (like a Link inside a heading, or a learn-more button), the default focus outline on the inner element can be visually disjointed or unnoticeable compared to the overall card layout.
 
 **Action:** Use the CSS `:has()` pseudo-class selector (e.g., `.card:has(.button:focus-visible)` or `.card:has(a:focus-visible)`) to delegate the focus state of the inner child to trigger the visual styling of the parent container. Remember to disable the outline on the inner child (e.g., `outline: none`) to prevent double outlines.
+
+## 2024-05-18 - [Add focus-visible to custom styled links/buttons]
+**Learning:** In the `Hero` component, an `<a>` tag was styled to look like a button (`.video-button`) but it lacked the `:focus-visible` outline. Keyboard users navigating the page could tab to it, but they wouldn't see any visual feedback, making the UI inaccessible for them.
+**Action:** Always ensure that custom styled interactive elements, especially links acting as buttons, include a explicitly defined `:focus-visible` state. I should use the standard focus pattern in the app (e.g., `outline: 3px solid #005fcc; outline-offset: 4px;`) so the visual feedback is clear and consistent across the design system.
