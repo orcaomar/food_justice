@@ -42,3 +42,8 @@
 **Vulnerability:** The contact form submission in `Footer.jsx` lacked a timeout on its `fetch` request to the external service (`submit-form.com`), which could result in hanging requests indefinitely if the third-party service experienced downtime or network issues, potentially leading to resource exhaustion or a poor user experience.
 **Learning:** Relying on default browser timeouts for network requests (which can be several minutes) is insufficient for ensuring a robust and responsive application, especially when integrating with decoupled third-party services.
 **Prevention:** Always implement an `AbortController` with a reasonable timeout duration (e.g., 8 seconds) for external `fetch` calls, ensuring that the application fails securely and provides timely feedback to the user when a service is unreachable.
+
+## 2024-05-27 - Resolving un-updatable vulnerabilities via overrides
+**Vulnerability:** The application was using dependencies with known vulnerabilities (`brace-expansion` and `diff`), but `pnpm update` failed to automatically resolve `diff` because it was a nested transitive dependency of `@flydotio/dockerfile`.
+**Learning:** For transitive dependencies that cannot be updated directly or via their parent package, `pnpm` overrides can forcefully bump the version across the entire dependency tree. This allows fixing low/moderate priority CVEs even when the direct dependency hasn't patched it yet.
+**Prevention:** Use the `pnpm.overrides` object in `package.json` (e.g., `"pnpm": { "overrides": { "diff": "^8.0.3" } }`) to explicitly dictate safe versions of stubborn transitive dependencies and clear `pnpm audit` failures.
