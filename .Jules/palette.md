@@ -23,3 +23,7 @@
 ## 2024-05-18 - [Add focus-visible to custom styled links/buttons]
 **Learning:** In the `Hero` component, an `<a>` tag was styled to look like a button (`.video-button`) but it lacked the `:focus-visible` outline. Keyboard users navigating the page could tab to it, but they wouldn't see any visual feedback, making the UI inaccessible for them.
 **Action:** Always ensure that custom styled interactive elements, especially links acting as buttons, include a explicitly defined `:focus-visible` state. I should use the standard focus pattern in the app (e.g., `outline: 3px solid #005fcc; outline-offset: 4px;`) so the visual feedback is clear and consistent across the design system.
+
+## 2025-02-28 - [Accessible Modal Focus Management]
+**Learning:** Found an accessibility issue specific to the custom `<Overlay>` modal component. When the modal opened, focus remained on the element that triggered it (e.g., the "Hear Story" button) rather than moving inside the modal context, causing screen readers and keyboard users to lose track of their position. Additionally, closing the modal did not return focus to the trigger element, breaking the natural document flow for keyboard navigation.
+**Action:** When implementing custom modal dialogs or overlays, always manage focus explicitly. Use a `useEffect` hook to store the `document.activeElement` when the modal opens, auto-focus a relevant element inside the modal (such as the close button), and restore focus to the stored element when the modal is unmounted.

@@ -3,12 +3,29 @@ import './Overlay.css';
 
 const Overlay = ({ isOpen, onClose, title, audioSrc, transcript }) => {
   const audioRef = useRef(null);
+  const closeButtonRef = useRef(null);
+  const previousFocusRef = useRef(null);
   const titleId = "overlay-title";
 
   useEffect(() => {
-    if (isOpen && audioRef.current) {
-      audioRef.current.play();
+    if (isOpen) {
+      previousFocusRef.current = document.activeElement;
+
+      if (closeButtonRef.current) {
+        closeButtonRef.current.focus();
+      }
+
+      if (audioRef.current) {
+        audioRef.current.play();
+      }
     }
+
+    return () => {
+      // Return focus to the element that was focused before the overlay opened
+      if (isOpen && previousFocusRef.current) {
+        previousFocusRef.current.focus();
+      }
+    };
   }, [isOpen]);
 
   useEffect(() => {
@@ -40,7 +57,7 @@ const Overlay = ({ isOpen, onClose, title, audioSrc, transcript }) => {
         aria-modal="true"
         aria-labelledby={titleId}
       >
-        <button className="close-button" onClick={onClose} aria-label="Close">
+        <button className="close-button" onClick={onClose} aria-label="Close" ref={closeButtonRef}>
           &times;
         </button>
         <h2 id={titleId}>{title}</h2>
