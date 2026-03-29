@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import DOMPurify from 'dompurify';
 import ResponsiveImage from './ResponsiveImage';
 import Overlay from './Overlay';
@@ -22,19 +22,42 @@ DOMPurify.addHook('afterSanitizeAttributes', function (node) {
   }
 });
 
+const renderSectionContent = (section) => {
+  if (section.mapUrl) {
+    return (
+      <iframe
+        width="100%"
+        height="632"
+        style={{ border: 'none' }}
+        src={section.mapUrl}
+        title={`${section.title} map`}
+        sandbox="allow-scripts allow-same-origin"
+        loading="lazy"
+      ></iframe>
+    );
+  }
+
+  return (
+    <p
+      style={{ whiteSpace: 'pre-wrap' }}
+      dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(section.text, { ADD_ATTR: ['target'] }) }}
+    />
+  );
+};
+
 const ChallengePage = ({ data }) => {
   const { title, image, subTitle, sections } = data;
   const sectionRefs = useRef([]);
   const [overlayData, setOverlayData] = useState(null);
 
-  const openOverlay = (section) => {
+  const openOverlay = useCallback((section) => {
     setOverlayData(section);
     trackEvent('Challenge Listening Overlay', 'Open', section.title);
-  };
+  }, []);
 
-  const closeOverlay = () => {
+  const closeOverlay = useCallback(() => {
     setOverlayData(null);
-  };
+  }, []);
 
   useEffect(() => {
     document.title = `${title} | Flemingdon & Thorncliffe Food Justice | Toronto, Canada`;
@@ -127,28 +150,34 @@ const ChallengePage = ({ data }) => {
     };
   }, []); // Empty dependency array ensures this runs only once on mount
 
-  const renderSectionContent = (section) => {
-    if (section.mapUrl) {
-      return (
-        <iframe
-          width="100%"
-          height="632"
-          style={{ border: 'none' }}
-          src={section.mapUrl}
-          title={`${section.title} map`}
-          sandbox="allow-scripts allow-same-origin"
-          loading="lazy"
-        ></iframe>
-      );
-    }
-
-    return (
-      <p
-        style={{ whiteSpace: 'pre-wrap' }}
-        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(section.text, { ADD_ATTR: ['target'] }) }}
-      />
-    );
-  };
+  // ⚡ Bolt: Memoize the rendered sections to prevent unnecessary re-renders of the entire list and its child components every time overlayData state changes. This reduces React reconciliation overhead.
+  const renderedSections = useMemo(() => {
+    return sections.map((section, index) => (
+      <div
+        key={index}
+        className={`section ${section.image ? (index % 2 === 0 ? 'image-left' : 'image-right') : 'text-only'}`}
+        ref={el => sectionRefs.current[index] = el}
+      >
+        {section.image && (
+          <div className="image-container">
+            <ResponsiveImage
+              src={section.image}
+              alt={section.title}
+            />
+          </div>
+        )}
+        <div className="text-container">
+          {section.title && <h2>{section.title}</h2>}
+          {renderSectionContent(section)}
+          {section.audio && (
+            <button className="hear-story-button" onClick={() => openOverlay(section)} aria-label={`Hear story about ${section.title || title}`}>
+              Hear Story
+            </button>
+          )}
+        </div>
+      </div>
+    ));
+  }, [sections, openOverlay, title]);
 
   return (
     <div className="challenge-page">
@@ -164,31 +193,7 @@ const ChallengePage = ({ data }) => {
       <p className="summary">{subTitle}</p>
 
       <div className="sections">
-        {sections.map((section, index) => (
-          <div
-            key={index}
-            className={`section ${section.image ? (index % 2 === 0 ? 'image-left' : 'image-right') : 'text-only'}`}
-            ref={el => sectionRefs.current[index] = el}
-          >
-            {section.image && (
-              <div className="image-container">
-                <ResponsiveImage
-                  src={section.image}
-                  alt={section.title}
-                />
-              </div>
-            )}
-            <div className="text-container">
-              {section.title && <h2>{section.title}</h2>}
-              {renderSectionContent(section)}
-              {section.audio && (
-                <button className="hear-story-button" onClick={() => openOverlay(section)} aria-label={`Hear story about ${section.title || title}`}>
-                  Hear Story
-                </button>
-              )}
-            </div>
-          </div>
-        ))}
+        {renderedSections}
       </div>
 
       {overlayData && (
