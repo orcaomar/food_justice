@@ -59,6 +59,20 @@
   background: #f9f9f9;
   padding: 2rem;
   border-radius: 8px;
+  position: relative;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover,
+.card:has(a:focus-visible) {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
 }
 
 .card:has(a:focus-visible) {
