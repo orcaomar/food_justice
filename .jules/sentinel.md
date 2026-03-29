@@ -47,3 +47,8 @@
 **Vulnerability:** The application was using dependencies with known vulnerabilities (`brace-expansion` and `diff`), but `pnpm update` failed to automatically resolve `diff` because it was a nested transitive dependency of `@flydotio/dockerfile`.
 **Learning:** For transitive dependencies that cannot be updated directly or via their parent package, `pnpm` overrides can forcefully bump the version across the entire dependency tree. This allows fixing low/moderate priority CVEs even when the direct dependency hasn't patched it yet.
 **Prevention:** Use the `pnpm.overrides` object in `package.json` (e.g., `"pnpm": { "overrides": { "diff": "^8.0.3" } }`) to explicitly dictate safe versions of stubborn transitive dependencies and clear `pnpm audit` failures.
+
+## 2026-03-29 - Add input validation to contact form
+**Vulnerability:** The contact form submitted data directly to an external service without validating the email format on the client side, relying solely on the browser's basic HTML5 validation, which can be easily bypassed.
+**Learning:** Even when delegating form submissions to a third-party service, defense-in-depth requires explicit client-side validation logic to prevent malformed data from being sent and processed.
+**Prevention:** Always validate all user inputs (like email formats) within the form submission handler before executing the external API call.
