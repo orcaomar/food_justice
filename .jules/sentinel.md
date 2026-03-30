@@ -52,3 +52,7 @@
 **Vulnerability:** The contact form submitted data directly to an external service without validating the email format on the client side, relying solely on the browser's basic HTML5 validation, which can be easily bypassed.
 **Learning:** Even when delegating form submissions to a third-party service, defense-in-depth requires explicit client-side validation logic to prevent malformed data from being sent and processed.
 **Prevention:** Always validate all user inputs (like email formats) within the form submission handler before executing the external API call.
+## 2026-03-29 - Add input validation to contact form
+**Vulnerability:** The contact form submitted data directly to an external service without validating the email format on the client side, relying solely on the browser's basic HTML5 validation, which can be easily bypassed.
+**Learning:** Even when delegating form submissions to a third-party service, defense-in-depth requires explicit client-side validation logic to prevent malformed data from being sent and processed.
+**Prevention:** Always validate all user inputs (like email formats) within the form submission handler before executing the external API call.
