@@ -31,3 +31,7 @@
 ## 2024-05-18 - Expanding Hit Areas for Nested Links
 **Learning:** Found a common UX pattern where visual cards (like the Testimonials on the Research page) appear interactive but only the nested link (text) inside is clickable. This creates a small hit area, violating Fitts's Law, and leads to a frustrating user experience, especially on mobile.
 **Action:** Use the CSS `::after` pseudo-element technique on the nested link (`position: absolute; inset: 0; content: "";`) while ensuring the parent card has `position: relative`. This expands the clickable area to cover the entire card without requiring JavaScript or invalidly wrapping the whole card in an `<a>` tag. Always pair this with a visual hover/focus state on the card (e.g., `transform: translateY(-4px)`) so users know the entire element is interactive.
+
+## 2025-03-05 - [Add focus-visible to custom styled links/buttons]
+**Learning:** Found an instance in the `OurResearch` component where an `<a>` tag was styled to look like a button (`.learn-more-button`) but lacked the `:focus-visible` outline. Keyboard users could tab to it, but they wouldn't see any visual feedback, making the UI inaccessible for them.
+**Action:** Always ensure that custom styled interactive elements, especially links acting as buttons, include an explicitly defined `:focus-visible` state. Used the standard focus pattern in the app (`outline: 3px solid #005fcc; outline-offset: 4px;`) so the visual feedback is clear and consistent across the design system.

@@ -53,6 +53,11 @@
   width: fit-content;
 }
 
+.learn-more-button:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 4px;
+}
+
 @media (max-width: 768px) {
   .research-content {
     flex-direction: column;
