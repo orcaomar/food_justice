@@ -43,6 +43,14 @@ const Footer = () => {
     setIsSubmitting(true);
     setSubmitError("");
 
+    // 🛡️ Sentinel: Add client-side email validation to ensure data integrity
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setSubmitError("Invalid email address format.");
+      setIsSubmitting(false);
+      return;
+    }
+
     // 🛡️ Sentinel: Add timeout to external API calls to prevent hanging requests
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 8000); // 8-second timeout
