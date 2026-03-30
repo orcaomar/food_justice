@@ -30,17 +30,86 @@ class Boid {
     
     // We accumulate a new acceleration each time based on three rules
     flock(boids) {
-      let sep = this.separate(boids); // Separation
-      let ali = this.align(boids);    // Alignment
-      let coh = this.cohesion(boids); // Cohesion
+      // ⚡ Bolt: Consolidating separate, align, and cohesion into a single iteration loop
+      // within the flock method optimizes performance by reducing array traversals
+      // from O(3N^2) to O(N^2) per frame.
+
+      let desiredseparation = 25.0;
+      let neighbordistAli = 30.0;
+      let neighbordistCoh = 20.0;
+
+      let sepSteer = createVector(0, 0);
+      let aliSum = createVector(0, 0);
+      let cohSum = createVector(0, 0);
+
+      let sepCount = 0;
+      let aliCount = 0;
+      let cohCount = 0;
+
+      for (let i = 0; i < boids.length; i++) {
+        let d = p5.Vector.dist(this.position, boids[i].position);
+
+        if (d > 0) {
+          // Separation
+          if (d < desiredseparation) {
+            let diff = p5.Vector.sub(this.position, boids[i].position);
+            diff.normalize();
+            diff.div(d);
+            sepSteer.add(diff);
+            sepCount++;
+          }
+
+          // Alignment
+          if (d < neighbordistAli) {
+            aliSum.add(boids[i].velocity);
+            aliCount++;
+          }
+
+          // Cohesion
+          if (d < neighbordistCoh) {
+            cohSum.add(boids[i].position);
+            cohCount++;
+          }
+        }
+      }
+
+      // Calculate Separation Steer
+      if (sepCount > 0) {
+        sepSteer.div(sepCount);
+      }
+      if (sepSteer.mag() > 0) {
+        sepSteer.normalize();
+        sepSteer.mult(this.maxspeed);
+        sepSteer.sub(this.velocity);
+        sepSteer.limit(this.maxforce);
+      }
+
+      // Calculate Alignment Steer
+      let aliSteer = createVector(0, 0);
+      if (aliCount > 0) {
+        aliSum.div(aliCount);
+        aliSum.normalize();
+        aliSum.mult(this.maxspeed);
+        aliSteer = p5.Vector.sub(aliSum, this.velocity);
+        aliSteer.limit(this.maxforce);
+      }
+
+      // Calculate Cohesion Steer
+      let cohSteer = createVector(0, 0);
+      if (cohCount > 0) {
+        cohSum.div(cohCount);
+        cohSteer = this.seek(cohSum);
+      }
+
       // Arbitrarily weight these forces
-      sep.mult(2.5);
-      ali.mult(1.0);
-      coh.mult(1.0);
+      sepSteer.mult(2.5);
+      aliSteer.mult(1.0);
+      cohSteer.mult(1.0);
+
       // Add the force vectors to acceleration
-      this.applyForce(sep);
-      this.applyForce(ali);
-      this.applyForce(coh);
+      this.applyForce(sepSteer);
+      this.applyForce(aliSteer);
+      this.applyForce(cohSteer);
     }
     
     // Method to update location
@@ -113,84 +182,4 @@ class Boid {
       if (this.position.y > height + this.r) this.position.y = -this.r;
     }
     
-    // Separation
-    // Method checks for nearby boids and steers away
-    separate(boids) {
-      let desiredseparation = 25.0;
-      let steer = createVector(0, 0);
-      let count = 0;
-      // For every boid in the system, check if it's too close
-      for (let i = 0; i < boids.length; i++) {
-        let d = p5.Vector.dist(this.position, boids[i].position);
-        // If the distance is greater than 0 and less than an arbitrary amount (0 when you are yourself)
-        if ((d > 0) && (d < desiredseparation)) {
-          // Calculate vector pointing away from neighbor
-          let diff = p5.Vector.sub(this.position, boids[i].position);
-          diff.normalize();
-          diff.div(d); // Weight by distance
-          steer.add(diff);
-          count++; // Keep track of how many
-        }
-      }
-      // Average -- divide by how many
-      if (count > 0) {
-        steer.div(count);
-      }
-    
-      // As long as the vector is greater than 0
-      if (steer.mag() > 0) {
-        // Implement Reynolds: Steering = Desired - Velocity
-        steer.normalize();
-        steer.mult(this.maxspeed);
-        steer.sub(this.velocity);
-        steer.limit(this.maxforce);
-      }
-      return steer;
-    }
-    
-    // Alignment
-    // For every nearby boid in the system, calculate the average velocity
-    align(boids) {
-      let neighbordist = 30;
-      let sum = createVector(0, 0);
-      let count = 0;
-      for (let i = 0; i < boids.length; i++) {
-        let d = p5.Vector.dist(this.position, boids[i].position);
-        if ((d > 0) && (d < neighbordist)) {
-          sum.add(boids[i].velocity);
-          count++;
-        }
-      }
-      if (count > 0) {
-        sum.div(count);
-        sum.normalize();
-        sum.mult(this.maxspeed);
-        let steer = p5.Vector.sub(sum, this.velocity);
-        steer.limit(this.maxforce);
-        return steer;
-      } else {
-        return createVector(0, 0);
-      }
-    }
-    
-    // Cohesion
-    // For the average location (i.e. center) of all nearby boids, calculate steering vector towards that location
-    cohesion(boids) {
-      let neighbordist = 20;
-      let sum = createVector(0, 0); // Start with empty vector to accumulate all locations
-      let count = 0;
-      for (let i = 0; i < boids.length; i++) {
-        let d = p5.Vector.dist(this.position, boids[i].position);
-        if ((d > 0) && (d < neighbordist)) {
-          sum.add(boids[i].position); // Add location
-          count++;
-        }
-      }
-      if (count > 0) {
-        sum.div(count);
-        return this.seek(sum); // Steer towards the location
-      } else {
-        return createVector(0, 0);
-      }
-    }  
   }
