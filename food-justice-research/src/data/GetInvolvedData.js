@@ -20,15 +20,11 @@ export const getInvolvedData = {
     questions: [
       {
         question: "What is food justice?",
-        answer: "",
+        answer: "Food justice means working to dismantle systemic forms of oppression that exist in our food system. It advocates for the right to food and challenges barriers that keep people from accessing the food they need to thrive, ensuring community control over the food system.",
       },
       {
         question: "What are some ways to volunteer?",
-        answer: "",
-      },
-      {
-        question: "Who can I reach out to?",
-        answer: "",
+        answer: "There are numerous opportunities to volunteer in the community. You can volunteer at the Flemingdon Food Bank (e.g., helping to unload food truck deliveries), or get involved with programs at the Thorncliffe Park Community Hub and the Flemingdon Health Centre.",
       },
     ],
   },
