@@ -40,7 +40,7 @@ const GetInvolved = () => {
         {getInvolvedData.faq.questions.map((item, index) => (
           <div key={index} className="faq-item">
             <h3>{item.question}</h3>
-            <p>{item.answer}</p>
+            <p dangerouslySetInnerHTML={{ __html: item.answer }}></p>
           </div>
         ))}
       </section>
