@@ -24,7 +24,15 @@ export const getInvolvedData = {
       },
       {
         question: "What are some ways to volunteer?",
-        answer: "There are numerous opportunities to volunteer in the community. You can volunteer at the Flemingdon Food Bank (e.g., helping to unload food truck deliveries), or get involved with programs at the Thorncliffe Park Community Hub and the Flemingdon Health Centre.",
+        answer: "There are numerous opportunities to volunteer in the community. You can volunteer at the <a href=\"https://www.fcfoodbank.com/volunteers\" target=\"_blank\" rel=\"noopener noreferrer\">Flemingdon Food Bank</a> (e.g., helping to unload food truck deliveries), or get involved with programs at the <a href=\"https://tno-toronto.org/volunteers/\" target=\"_blank\" rel=\"noopener noreferrer\">Thorncliffe Park Community Hub</a> and the <a href=\"https://www.fhc-chc.com/get-involved/volunteer/\" target=\"_blank\" rel=\"noopener noreferrer\">Flemingdon Health Centre</a>.",
+      },
+      {
+        question: "How can I learn more about food justice and food security initiatives?",
+        answer: "To learn more about food justice and food security initiatives at the community level, and how to get involved, visit FoodShare Toronto at <a href=\"https://www.foodshare.net\" target=\"_blank\" rel=\"noopener noreferrer\">www.foodshare.net</a>.",
+      },
+      {
+        question: "How can I locate a food bank near me?",
+        answer: "To locate a food bank near you, visit Daily Bread Food Bank at <a href=\"https://www.dailybread.ca/need-food\" target=\"_blank\" rel=\"noopener noreferrer\">www.dailybread.ca/need-food</a>.",
       },
     ],
   },
