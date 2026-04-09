@@ -22,6 +22,20 @@ DOMPurify.addHook('afterSanitizeAttributes', function (node) {
   }
 });
 
+// ⚡ Bolt: Cache sanitized HTML strings to avoid expensive re-sanitization on every re-render.
+// Since the data is static, we can safely use a module-level Map to persist the cache.
+const sanitizationCache = new Map();
+
+const getSanitizedHtml = (text) => {
+  if (!text) return '';
+  if (sanitizationCache.has(text)) {
+    return sanitizationCache.get(text);
+  }
+  const sanitized = DOMPurify.sanitize(text, { ADD_ATTR: ['target'] });
+  sanitizationCache.set(text, sanitized);
+  return sanitized;
+};
+
 const renderSectionContent = (section) => {
   if (section.mapUrl) {
     return (
@@ -40,7 +54,7 @@ const renderSectionContent = (section) => {
   return (
     <p
       style={{ whiteSpace: 'pre-wrap' }}
-      dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(section.text, { ADD_ATTR: ['target'] }) }}
+      dangerouslySetInnerHTML={{ __html: getSanitizedHtml(section.text) }}
     />
   );
 };
