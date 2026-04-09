@@ -1,5 +1,4 @@
 import marketplaceAudio from '../assets/audio/sonia-farah-Luannhost-residents.mp3';
-import placeholderAudio from '../assets/audio/placeholder.mp3';
 import foodOpportunitiesAudio from '../assets/audio/Farhad create a platform_trimmed.mp3';
 import educationTrainingAudio from '../assets/audio/Nadia-omar-host.mp3';
 import jobsAudio from '../assets/audio/khalil-nadia-luannhost-residents.mp3';
