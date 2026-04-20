@@ -4,7 +4,6 @@ import localHousingImage from '../assets/challenges/sub_pages/Iglof7X0XJDZRZcwgS
 import increasingDeepeningFoodInsecurityImage from '../assets/challenges/sub_pages/grx5WPQXF83mssd35daufnpmbA.jpg';
 import unaffordabilityImage from '../assets/challenges/sub_pages/cV4W8BowN8UqD6sZS7XPqmCrj8.jpg';
 import labourMarketExclusionExploitationImage from '../assets/challenges/sub_pages/eR1qJVz40AaT7V3YCrMA26P0cpo.jpg';
-import stigmatizationShameAndIndignityImage from '../assets/challenges/sub_pages/TPaxET9KbXqsDgAfGonreR2Le0.jpg';
 import emergencyFoodCharityImage from '../assets/challenges/sub_pages/KYrKdcBYQH3W8uXXhi1V3WfZss.jpg';
 import povertyAndCorporateGreedCarouselImage from '../assets/challenges/sub_pages/e8J8E5eYvhfEhxMBcSZMKbynYE.jpg';
 import competitionPowerImbalanceImage from '../assets/challenges/sub_pages/77HphpE6HipyJjg1etIr16KaC0.jpg';
