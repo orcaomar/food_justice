@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap');
-
+/* Google fonts loaded asynchronously with preconnect in index.html */
 body {
   margin: 0;
   font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

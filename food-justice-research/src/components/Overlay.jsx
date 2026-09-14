@@ -61,7 +61,7 @@ const Overlay = ({ isOpen, onClose, title, audioSrc, transcript }) => {
           &times;
         </button>
         <h2 id={titleId}>{title}</h2>
-        <audio controls src={audioSrc} ref={audioRef}>
+        <audio controls preload="none" src={audioSrc} ref={audioRef}>
           Your browser does not support the audio element.
         </audio>
         <p style={{ whiteSpace: 'pre-wrap' }}>{transcript}</p>

@@ -1,13 +1,13 @@
-import povertyAndCorporateGreedImage from '../assets/challenges/sub_pages/HU1zoKMF1yyRRDoLcgimLkzn88.jpg';
-import areFoodProgramsHelpingImage from '../assets/challenges/sub_pages/8yfFlMaoRVgxr9ke1c2E6OG476s.jpg';
-import localHousingImage from '../assets/challenges/sub_pages/Iglof7X0XJDZRZcwgSQOVH41Ro.jpg';
-import increasingDeepeningFoodInsecurityImage from '../assets/challenges/sub_pages/grx5WPQXF83mssd35daufnpmbA.jpg';
-import unaffordabilityImage from '../assets/challenges/sub_pages/cV4W8BowN8UqD6sZS7XPqmCrj8.jpg';
-import labourMarketExclusionExploitationImage from '../assets/challenges/sub_pages/eR1qJVz40AaT7V3YCrMA26P0cpo.jpg';
-import stigmatizationShameAndIndignityImage from '../assets/challenges/sub_pages/TPaxET9KbXqsDgAfGonreR2Le0.jpg';
-import emergencyFoodCharityImage from '../assets/challenges/sub_pages/KYrKdcBYQH3W8uXXhi1V3WfZss.jpg';
-import povertyAndCorporateGreedCarouselImage from '../assets/challenges/sub_pages/e8J8E5eYvhfEhxMBcSZMKbynYE.jpg';
-import competitionPowerImbalanceImage from '../assets/challenges/sub_pages/77HphpE6HipyJjg1etIr16KaC0.jpg';
+import povertyAndCorporateGreedImage from '../assets/challenges/sub_pages/HU1zoKMF1yyRRDoLcgimLkzn88.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import areFoodProgramsHelpingImage from '../assets/challenges/sub_pages/8yfFlMaoRVgxr9ke1c2E6OG476s.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import localHousingImage from '../assets/challenges/sub_pages/Iglof7X0XJDZRZcwgSQOVH41Ro.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import increasingDeepeningFoodInsecurityImage from '../assets/challenges/sub_pages/grx5WPQXF83mssd35daufnpmbA.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import unaffordabilityImage from '../assets/challenges/sub_pages/cV4W8BowN8UqD6sZS7XPqmCrj8.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import labourMarketExclusionExploitationImage from '../assets/challenges/sub_pages/eR1qJVz40AaT7V3YCrMA26P0cpo.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import stigmatizationShameAndIndignityImage from '../assets/challenges/sub_pages/TPaxET9KbXqsDgAfGonreR2Le0.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import emergencyFoodCharityImage from '../assets/challenges/sub_pages/KYrKdcBYQH3W8uXXhi1V3WfZss.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import povertyAndCorporateGreedCarouselImage from '../assets/challenges/sub_pages/e8J8E5eYvhfEhxMBcSZMKbynYE.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import competitionPowerImbalanceImage from '../assets/challenges/sub_pages/77HphpE6HipyJjg1etIr16KaC0.jpg?w=400;800;1200&format=webp;jpg&srcset';
 
 import areFoodProgramsHelpingAudio from '../assets/audio/Hamid-worker (1).mp3';
 import localHousingAudio from '../assets/audio/Nadia-resident (3).mp3';

@@ -30,12 +30,8 @@ COPY . .
 # Build application
 RUN npm run build
 
-# Remove development dependencies
-RUN npm prune --omit=dev
-
-
-# Final stage for app image
-FROM nginx
+# Final stage for app image using lightweight Alpine
+FROM nginx:alpine-slim
 
 # Copy built application
 COPY --from=build /app/dist /usr/share/nginx/html

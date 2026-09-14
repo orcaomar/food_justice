@@ -25,7 +25,7 @@ describe('Analytics', () => {
         <App />
       </MemoryRouter>
     );
-    expect(ReactGA.initialize).toHaveBeenCalledWith('G-YGFJP6NY5D');
+    expect(ReactGA.initialize).toHaveBeenCalledWith('G-EV4RRMTWMS');
     expect(ReactGA.initialize).toHaveBeenCalledTimes(1);
   });
 

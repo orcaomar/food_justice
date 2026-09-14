@@ -1,11 +1,11 @@
 
-import unaffordability from '../assets/challenges/sub_pages/grx5WPQXF83mssd35daufnpmbA.jpg';
-import canadianDream from '../assets/challenges/sub_pages/0gIZmlrA7EB8opCNCDBitX0yiQ0.jpg';
-import risingCosts from '../assets/challenges/sub_pages/ZyfaLHOTokORvpepV28fd7aXkA.jpg';
-import housingCrisis from '../assets/challenges/sub_pages/tO0MINGYleoMnT1w6YdYuoAaUo.jpg';
-import childcareDemands from '../assets/challenges/sub_pages/h5YkQ3OeFZvCSc67haIrPpYEU.jpg';
-import communityAwareness from '../assets/challenges/sub_pages/Nk3myKhzH0htrFNZA39uq4dzf4.jpg';
-import accessToOtherSupports from '../assets/challenges/sub_pages/D4NsYSKqRhOnMNTQaVwtP5vjFg.jpg';
+import unaffordability from '../assets/challenges/sub_pages/grx5WPQXF83mssd35daufnpmbA.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import canadianDream from '../assets/challenges/sub_pages/0gIZmlrA7EB8opCNCDBitX0yiQ0.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import risingCosts from '../assets/challenges/sub_pages/ZyfaLHOTokORvpepV28fd7aXkA.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import housingCrisis from '../assets/challenges/sub_pages/tO0MINGYleoMnT1w6YdYuoAaUo.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import childcareDemands from '../assets/challenges/sub_pages/h5YkQ3OeFZvCSc67haIrPpYEU.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import communityAwareness from '../assets/challenges/sub_pages/Nk3myKhzH0htrFNZA39uq4dzf4.jpg?w=400;800;1200&format=webp;jpg&srcset';
+import accessToOtherSupports from '../assets/challenges/sub_pages/D4NsYSKqRhOnMNTQaVwtP5vjFg.jpg?w=400;800;1200&format=webp;jpg&srcset';
 
 import canadianDreamAudio from '../assets/audio/Nadia-Alizah-residents.mp3';
 import risingCostsAudio from '../assets/audio/Alizah-Nadia-Maliha-residents.mp3';

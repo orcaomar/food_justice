@@ -47,3 +47,10 @@
   outline: 3px solid #005fcc;
   outline-offset: 4px;
 }
+
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 42px;
+    padding: 0 16px;
+  }
+}

@@ -3,20 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@playwright/test": "^1.56.1",
-    "@testing-library/dom": "^10.4.1",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^14.0.0",
-    "@testing-library/user-event": "^14.6.1",
     "dompurify": "^3.1.6",
-    "playwright": "^1.56.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-ga4": "^2.1.0",
-    "react-responsive-carousel": "^3.2.23",
-    "react-router-dom": "^6.25.1",
-    "serve": "^14.2.3",
-    "web-vitals": "^5.1.0"
+    "react-router-dom": "^6.25.1"
   },
   "scripts": {
     "start": "serve -s dist",
@@ -50,9 +41,16 @@
   },
   "devDependencies": {
     "@flydotio/dockerfile": "^0.7.10",
+    "@playwright/test": "^1.56.1",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.6.1",
     "@vitejs/plugin-react": "^5.1.0",
     "jsdom": "^27.1.0",
     "lamejs": "^1.2.1",
+    "playwright": "^1.56.1",
+    "serve": "^14.2.3",
     "vite": "^7.2.2",
     "vite-imagetools": "^9.0.0",
     "vite-plugin-sitemap": "^0.8.2",
