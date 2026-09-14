@@ -9,8 +9,8 @@ This document contains architectural context, infrastructure configuration, perf
 - **Domain**: [https://foodjusticeresearch.ca](https://foodjusticeresearch.ca)
 - **Primary Subdirectory**: `food-justice-research/`
 - **Application Type**: Client-side Single Page Application (SPA) built with **React 18** and **Vite**.
-- **Production Hosting**: **Fly.io** (App name: `food-justice-research`, Region: `yyz` - Toronto).
-- **Production Runtime**: Docker container running **NGINX** serving static assets built by Vite (`/app/dist`).
+- **Production Hosting**: **Cloudflare Pages** (Project: `food-justice-research`, automatic CI builds from GitHub `main` branch).
+- **Previous/Backup Hosting**: Fly.io (`food-justice-research`).
 - **No Backend**: There is no server-side Node.js/Python API or database in this repository. All data is static JSON/JS modules inside `src/data/`.
 
 ---
