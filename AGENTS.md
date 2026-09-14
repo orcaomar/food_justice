@@ -23,7 +23,7 @@ This document contains architectural context, infrastructure configuration, perf
 - [x] **Image Modernization**: All 7 challenge data files now use `vite-imagetools` responsive WebP srcset (`?w=400;800;1200&format=webp;jpg&srcset`). Raw 3–6MB JPEGs removed from production dist.
 - [x] **Hero Video & Modal Audio**: Added poster image and `preload="metadata"` in [`Hero.jsx`](file:///workspace/food_justice/food-justice-research/src/components/Hero.jsx); added `preload="none"` in [`Overlay.jsx`](file:///workspace/food_justice/food-justice-research/src/components/Overlay.jsx).
 - [x] **Font & Dependency Cleanups**: Removed render-blocking `@import` from [`index.css`](file:///workspace/food_justice/food-justice-research/src/index.css); added DNS preconnects and stylesheet link in [`index.html`](file:///workspace/food_justice/food-justice-research/index.html); pruned unused packages in [`package.json`](file:///workspace/food_justice/food-justice-research/package.json).
-- [x] **Deploying Changes**: To deploy the updated configuration to Fly.io, run `flyctl deploy` inside `food-justice-research/`.
+- [x] **Deploying Changes**: To deploy the updated configuration to Fly.io, run `flyctl deploy --local-only` inside `food-justice-research/` (builds locally using Docker and avoids uploading the 300MB context to remote builders).
 
 ---
 
