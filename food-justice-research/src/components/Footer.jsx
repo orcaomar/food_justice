@@ -120,6 +120,7 @@ const Footer = () => {
                   href="https://drive.google.com/file/d/1unQy70cFTCWkmr3pEqioJu2WEqgX4aTS/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Research Report (opens in a new tab)"
                 >
                   Research Report
                 </a>
@@ -129,6 +130,7 @@ const Footer = () => {
                   href="https://drive.google.com/file/d/164Xmyw9_4-CXNy9bDpjNHcbw3LB5l2JM/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Executive Summary (opens in a new tab)"
                 >
                   Executive Summary
                 </a>
@@ -138,20 +140,25 @@ const Footer = () => {
           <div className="footer-column">
             <h3>Get In Touch</h3>
             {submitted ? (
-              <div>Message submitted.</div>
+              <div role="status" aria-live="polite">Message submitted.</div>
             ) : (
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} noValidate>
                 {submitError && (
                   <div
                     className="error-message"
+                    role="alert"
+                    aria-live="assertive"
+                    id="footer-form-error"
                     style={{ color: "#d32f2f", marginBottom: "10px" }}
                   >
                     {submitError}
                   </div>
                 )}
                 {/* 🛡️ Sentinel: Enforce input length limits to prevent oversized payload DoS */}
+                <label htmlFor="footer-name" className="sr-only">Your name</label>
                 <input
                   type="text"
+                  id="footer-name"
                   name="name"
                   aria-label="Your name"
                   placeholder="Your name"
@@ -159,9 +166,12 @@ const Footer = () => {
                   onChange={handleChange}
                   required
                   maxLength="100"
+                  aria-describedby={submitError ? "footer-form-error" : undefined}
                 />
+                <label htmlFor="footer-email" className="sr-only">Your email</label>
                 <input
                   type="email"
+                  id="footer-email"
                   name="email"
                   aria-label="Your email"
                   placeholder="Your email"
@@ -169,8 +179,11 @@ const Footer = () => {
                   onChange={handleChange}
                   required
                   maxLength="150"
+                  aria-describedby={submitError ? "footer-form-error" : undefined}
                 />
+                <label htmlFor="footer-message" className="sr-only">Your message</label>
                 <textarea
+                  id="footer-message"
                   name="message"
                   aria-label="Your message"
                   placeholder="Your message"
@@ -178,6 +191,7 @@ const Footer = () => {
                   onChange={handleChange}
                   required
                   maxLength="1000"
+                  aria-describedby={submitError ? "footer-form-error" : undefined}
                 ></textarea>
                 <button
                   type="submit"
@@ -196,6 +210,7 @@ const Footer = () => {
           href="https://www.engagedcommunities.ca/"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Engaged Communities (opens in a new tab)"
         >
           Engaged Communities © 2023-2024
         </a>

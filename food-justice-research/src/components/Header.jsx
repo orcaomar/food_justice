@@ -5,6 +5,7 @@ import './Header.css';
 const Header = () => {
   return (
     <header>
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       <div className="logo-container">
         <Link to="/" aria-label="Home">
           <Logo />

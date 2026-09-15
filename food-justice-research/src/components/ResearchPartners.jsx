@@ -14,16 +14,16 @@ import sshrcLogo from '../assets/homepage/bfESyuSZFewOEjYqQwatWtTt61s.png?w=400;
 
 const ResearchPartners = () => {
   return (
-    <section className="research-partners">
-      <h2>Research Partners</h2>
+    <section className="research-partners" aria-labelledby="research-partners-heading">
+      <h2 id="research-partners-heading">Research Partners</h2>
       <div className="partner-logos">
-        <ResponsiveImage src={glrcLogo} alt="GLRC Wordmark" />
-        <ResponsiveImage src={yorkUniversityLogo} alt="York University" />
-        <ResponsiveImage src={engagedCommunitiesLogo} alt="Engaged Communities" />
-        <ResponsiveImage src={tnoLogo} alt="TNO" />
+        <ResponsiveImage src={glrcLogo} alt="Global Labour Research Centre (GLRC) logo" />
+        <ResponsiveImage src={yorkUniversityLogo} alt="York University logo" />
+        <ResponsiveImage src={engagedCommunitiesLogo} alt="Engaged Communities logo" />
+        <ResponsiveImage src={tnoLogo} alt="The Neighbourhood Organization (TNO) logo" />
       </div>
       <p>This site draws on research supported by the Social Sciences and Humanities Research Council.</p>
-      <ResponsiveImage src={sshrcLogo} alt="SSHRC" className="sshrc-logo" />
+      <ResponsiveImage src={sshrcLogo} alt="Social Sciences and Humanities Research Council (SSHRC) logo" className="sshrc-logo" />
     </section>
   );
 };

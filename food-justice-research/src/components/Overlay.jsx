@@ -28,10 +28,41 @@ const Overlay = ({ isOpen, onClose, title, audioSrc, transcript }) => {
     };
   }, [isOpen]);
 
+  const modalRef = useRef(null);
+
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape' && isOpen) {
+      if (!isOpen) return;
+
+      if (e.key === 'Escape') {
         onClose();
+        return;
+      }
+
+      if (e.key === 'Tab' && modalRef.current) {
+        const focusableElements = modalRef.current.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"]), audio[controls]'
+        );
+
+        if (focusableElements.length === 0) {
+          e.preventDefault();
+          return;
+        }
+
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            lastElement.focus();
+            e.preventDefault();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            firstElement.focus();
+            e.preventDefault();
+          }
+        }
       }
     };
 
@@ -52,16 +83,17 @@ const Overlay = ({ isOpen, onClose, title, audioSrc, transcript }) => {
     <div className="overlay" onClick={onClose}>
       <div
         className="overlay-content"
+        ref={modalRef}
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
       >
-        <button className="close-button" onClick={onClose} aria-label="Close" ref={closeButtonRef}>
+        <button className="close-button" onClick={onClose} aria-label="Close dialog" ref={closeButtonRef}>
           &times;
         </button>
         <h2 id={titleId}>{title}</h2>
-        <audio controls preload="none" src={audioSrc} ref={audioRef}>
+        <audio controls preload="none" src={audioSrc} ref={audioRef} aria-label={`Audio recording for ${title}`}>
           Your browser does not support the audio element.
         </audio>
         <p style={{ whiteSpace: 'pre-wrap' }}>{transcript}</p>

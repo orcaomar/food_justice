@@ -16,10 +16,20 @@ const Hero = () => {
         playsInline
         autoPlay
         preload="metadata"
+        aria-hidden="true"
+        tabIndex="-1"
       />
       <div className="hero-text">
         <h1>Flemingdon & Thorncliffe Food Justice</h1>
-        <a href="https://youtu.be/h1124yB9sc0?si=Zu4JN6y5PCmsJX5g" target="_blank" rel="noopener noreferrer" className="video-button">See Video</a>
+        <a
+          href="https://youtu.be/h1124yB9sc0?si=Zu4JN6y5PCmsJX5g"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="video-button"
+          aria-label="See Video (opens in a new tab)"
+        >
+          See Video
+        </a>
       </div>
     </div>
   );

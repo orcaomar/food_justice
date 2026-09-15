@@ -39,11 +39,15 @@ const Challenges = () => {
             <h3>{challenge.title}</h3>
             <ResponsiveImage
               src={challenge.imageUrl}
-              alt={challenge.title}
+              alt={`Illustration for ${challenge.title}`}
               className="challenge-image"
             />
             <div className="challenge-content">
-              <Link to={challenge.link} className="learn-more-button">
+              <Link
+                to={challenge.link}
+                className="learn-more-button"
+                aria-label={`Learn more about ${challenge.title}`}
+              >
                 Learn more
               </Link>
             </div>

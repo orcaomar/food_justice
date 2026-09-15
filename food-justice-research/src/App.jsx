@@ -34,30 +34,32 @@ function App() {
     <div className="App">
       <Analytics />
       <Header />
-      <Suspense fallback={<div style={{ padding: '2rem', textAlign: 'center' }}>Loading...</div>}>
-        <Routes>
-          <Route path="/" element={
-            <>
-              <Hero />
-              <Quotes />
-              <OurResearch />
-              <ChallengesHomepage />
-              <ResearchPartners />
-            </>
-          } />
-          <Route path="/research" element={<Research />} />
-          <Route path="/challenges" element={<Challenges />} />
-          <Route path="/challenges/increasing-and-deepening-food-insecurity" element={<IncreasingFoodInsecurity />} />
-          <Route path="/challenges/unaffordability" element={<Unaffordability />} />
-          <Route path="/challenges/labour-market-exploitation" element={<LabourMarketExploitation />} />
-          <Route path="/challenges/stigmatization" element={<Stigmatization />} />
-          <Route path="/challenges/emergency-food-charity" element={<EmergencyFoodCharity />} />
-          <Route path="/challenges/poverty-corporate-greed" element={<PovertyAndCorporateGreed />} />
-          <Route path="/challenges/competition-power-imbalance" element={<CompetitionAndPowerImbalances />} />
-          <Route path="/community-ideas" element={<CommunityIdeas />} />
-          <Route path="/get-involved" element={<GetInvolved />} />
-        </Routes>
-      </Suspense>
+      <main id="main-content" tabIndex="-1">
+        <Suspense fallback={<div style={{ padding: '2rem', textAlign: 'center' }}>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={
+              <>
+                <Hero />
+                <Quotes />
+                <OurResearch />
+                <ChallengesHomepage />
+                <ResearchPartners />
+              </>
+            } />
+            <Route path="/research" element={<Research />} />
+            <Route path="/challenges" element={<Challenges />} />
+            <Route path="/challenges/increasing-and-deepening-food-insecurity" element={<IncreasingFoodInsecurity />} />
+            <Route path="/challenges/unaffordability" element={<Unaffordability />} />
+            <Route path="/challenges/labour-market-exploitation" element={<LabourMarketExploitation />} />
+            <Route path="/challenges/stigmatization" element={<Stigmatization />} />
+            <Route path="/challenges/emergency-food-charity" element={<EmergencyFoodCharity />} />
+            <Route path="/challenges/poverty-corporate-greed" element={<PovertyAndCorporateGreed />} />
+            <Route path="/challenges/competition-power-imbalance" element={<CompetitionAndPowerImbalances />} />
+            <Route path="/community-ideas" element={<CommunityIdeas />} />
+            <Route path="/get-involved" element={<GetInvolved />} />
+          </Routes>
+        </Suspense>
+      </main>
       <Footer />
     </div>
   );

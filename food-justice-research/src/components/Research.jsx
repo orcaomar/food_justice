@@ -31,10 +31,10 @@ const Research = () => {
       </div>
 
       <section className="what-we-learned">
-        <h2>What We Learned</h2>
+        <h2 id="what-we-learned-heading">What We Learned</h2>
       </section>
 
-      <section className="testimonials">
+      <section className="testimonials" aria-labelledby="what-we-learned-heading">
         <div className="card">
           <h3><Link to="/challenges/increasing-and-deepening-food-insecurity">Increasing and deepening food insecurity</Link></h3>
           <p>Many more individuals and families in Flemingdon Park and Thorncliffe Park rely on emergency food distribution services since the ongoing dual crisis – public health and inflation – of the pandemic. And food insecurity is about so much more than food.</p>
@@ -169,8 +169,22 @@ const Research = () => {
       <section className="research-report">
         <h2>Research Report</h2>
         <p>Access the full report and executive summary here!</p>
-        <a href="https://drive.google.com/open?id=164Xmyw9_4-CXNy9bDpjNHcbw3LB5l2JM&usp=drive_fs" target="_blank" rel="noopener noreferrer">Executive Summary</a>
-        <a href="https://drive.google.com/file/d/1unQy70cFTCWkmr3pEqioJu2WEqgX4aTS/view?usp=sharing" target="_blank" rel="noopener noreferrer">Full Report</a>
+        <a
+          href="https://drive.google.com/open?id=164Xmyw9_4-CXNy9bDpjNHcbw3LB5l2JM&usp=drive_fs"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Executive Summary (opens in a new tab)"
+        >
+          Executive Summary
+        </a>
+        <a
+          href="https://drive.google.com/file/d/1unQy70cFTCWkmr3pEqioJu2WEqgX4aTS/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Full Report (opens in a new tab)"
+        >
+          Full Report
+        </a>
       </section>
     </div>
   );

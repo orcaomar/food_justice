@@ -27,16 +27,29 @@ const GetInvolved = () => {
         <p>{getInvolvedData.banner.text}</p>
       </section>
 
-      <section className="interactive-map">
-        <h2>{getInvolvedData.interactiveMap.title}</h2>
-        <iframe src={getInvolvedData.interactiveMap.mapUrl} width="800" height="600" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe>
-        <a href={getInvolvedData.interactiveMap.buttonUrl} target="_blank" rel="noopener noreferrer" className="map-button">
+      <section className="interactive-map" aria-labelledby="map-heading">
+        <h2 id="map-heading">{getInvolvedData.interactiveMap.title}</h2>
+        <iframe
+          src={getInvolvedData.interactiveMap.mapUrl}
+          title={getInvolvedData.interactiveMap.title || "Interactive Community Map"}
+          width="800"
+          height="600"
+          sandbox="allow-scripts allow-same-origin"
+          loading="lazy"
+        ></iframe>
+        <a
+          href={getInvolvedData.interactiveMap.buttonUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="map-button"
+          aria-label={`${getInvolvedData.interactiveMap.buttonText} (opens in a new tab)`}
+        >
           {getInvolvedData.interactiveMap.buttonText}
         </a>
       </section>
 
-      <section className="faq">
-        <h2>{getInvolvedData.faq.title}</h2>
+      <section className="faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">{getInvolvedData.faq.title}</h2>
         {getInvolvedData.faq.questions.map((item, index) => (
           <div key={index} className="faq-item">
             <h3>{item.question}</h3>

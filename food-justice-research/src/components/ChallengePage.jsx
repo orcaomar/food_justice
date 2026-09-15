@@ -78,6 +78,19 @@ const ChallengePage = ({ data }) => {
   }, [title]);
 
   useEffect(() => {
+    // Check if the user prefers reduced motion (WCAG 2.3.3)
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      sectionRefs.current.forEach(section => {
+        if (section) section.style.transform = 'none';
+      });
+      return;
+    }
+
     // ⚡ Bolt: Use a hybrid approach for optimal scroll-based scaling animations.
     // 1. IntersectionObserver tracks visibility to filter active sections.
     // 2. A passive scroll listener handles smooth updates only for visible elements.
@@ -176,7 +189,7 @@ const ChallengePage = ({ data }) => {
           <div className="image-container">
             <ResponsiveImage
               src={section.image}
-              alt={section.title}
+              alt={section.imageAlt || `Photograph depicting ${section.title}`}
             />
           </div>
         )}
@@ -199,7 +212,7 @@ const ChallengePage = ({ data }) => {
       {/* ⚡ Bolt: LCP Optimization - Load above-the-fold main image eagerly with high priority to improve LCP */}
       <ResponsiveImage
         src={image}
-        alt={title}
+        alt={`Overview visual for ${title}`}
         className="main-image"
         loading="eager"
         fetchpriority="high"
