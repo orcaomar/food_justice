@@ -23,6 +23,7 @@ This document contains architectural context, infrastructure configuration, perf
 - [x] **Hero Video & Modal Audio**: Added poster image and `preload="metadata"` in [`Hero.jsx`](file:///workspace/food_justice/food-justice-research/src/components/Hero.jsx); added `preload="none"` in [`Overlay.jsx`](file:///workspace/food_justice/food-justice-research/src/components/Overlay.jsx).
 - [x] **Font & Dependency Cleanups**: Removed render-blocking `@import` from [`index.css`](file:///workspace/food_justice/food-justice-research/src/index.css); added DNS preconnects and stylesheet link in [`index.html`](file:///workspace/food_justice/food-justice-research/index.html); pruned unused packages in [`package.json`](file:///workspace/food_justice/food-justice-research/package.json).
 - [x] **Accessibility (WCAG 2.1 AA/AAA) Remediation**: Added skip-to-content link, main landmark container, modal keyboard focus trap, explicit form labels, live error/status regions, iframe titles, prefers-reduced-motion support, carousel role semantics, and expanded logo alt text.
+- [x] **Security Hardening (OWASP & Cloudflare Pages)**: Deployed edge `_headers` (CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy) and `_redirects` (SPA fallback); upgraded `dompurify` and implemented centralized `sanitizeHtml` with reverse tabnabbing protection.
 
 ---
 

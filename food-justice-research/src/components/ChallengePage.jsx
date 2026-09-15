@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
-import DOMPurify from 'dompurify';
 import ResponsiveImage from './ResponsiveImage';
 import Overlay from './Overlay';
 import { trackEvent } from '../utils/google-analytics';
+import { sanitizeHtml } from '../utils/sanitize';
 import Challenges from './Challenges';
 import './ChallengePage.css';
 
@@ -14,27 +14,6 @@ const MAX_SCALE = 1.0; // The largest the section will be (full size)
 // 0.8 means the zoom finishes when the top of the section is 80% from the bottom of the screen.
 const ZOOM_START_THRESHOLD = 0.1;
 const ZOOM_END_THRESHOLD = 0.8;
-
-// 🛡️ Sentinel: Mitigate reverse tabnabbing and allow target="_blank"
-DOMPurify.addHook('afterSanitizeAttributes', function (node) {
-  if (node.tagName === 'A' && node.getAttribute('target') === '_blank') {
-    node.setAttribute('rel', 'noopener noreferrer');
-  }
-});
-
-// ⚡ Bolt: Cache sanitized HTML strings to avoid expensive re-sanitization on every re-render.
-// Since the data is static, we can safely use a module-level Map to persist the cache.
-const sanitizationCache = new Map();
-
-const getSanitizedHtml = (text) => {
-  if (!text) return '';
-  if (sanitizationCache.has(text)) {
-    return sanitizationCache.get(text);
-  }
-  const sanitized = DOMPurify.sanitize(text, { ADD_ATTR: ['target'] });
-  sanitizationCache.set(text, sanitized);
-  return sanitized;
-};
 
 const renderSectionContent = (section) => {
   if (section.mapUrl) {
@@ -54,7 +33,7 @@ const renderSectionContent = (section) => {
   return (
     <p
       style={{ whiteSpace: 'pre-wrap' }}
-      dangerouslySetInnerHTML={{ __html: getSanitizedHtml(section.text) }}
+      dangerouslySetInnerHTML={{ __html: sanitizeHtml(section.text) }}
     />
   );
 };

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "dompurify": "^3.1.6",
+    "dompurify": "^3.4.15",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-ga4": "^2.1.0",
@@ -15,11 +15,6 @@
     "build": "vite build",
     "test": "vitest",
     "preview": "vite preview"
-  },
-  "overrides": {
-    "nth-check": "2.0.1",
-    "postcss": "8.4.31",
-    "webpack-dev-server": "4.15.2"
   },
   "eslintConfig": {
     "extends": [

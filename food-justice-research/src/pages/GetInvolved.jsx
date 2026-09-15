@@ -3,6 +3,7 @@ import useDocumentTitle from "../hooks/useDocumentTitle";
 import { getInvolvedData } from "../data/GetInvolvedData";
 import "./GetInvolved.css";
 import ResponsiveImage from "../components/ResponsiveImage";
+import { sanitizeHtml } from "../utils/sanitize";
 
 const GetInvolved = () => {
   useDocumentTitle('Get Involved | Flemingdon & Thorncliffe Food Justice | Toronto, Canada');
@@ -53,7 +54,7 @@ const GetInvolved = () => {
         {getInvolvedData.faq.questions.map((item, index) => (
           <div key={index} className="faq-item">
             <h3>{item.question}</h3>
-            <p dangerouslySetInnerHTML={{ __html: item.answer }}></p>
+            <p dangerouslySetInnerHTML={{ __html: sanitizeHtml(item.answer) }}></p>
           </div>
         ))}
       </section>
